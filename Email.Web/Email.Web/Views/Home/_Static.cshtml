@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+    var key = ViewBag.Key;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script src="~/Scripts/lib/require.js"></script>
+    <script>
+        require.config({
+            baseUrl: "/Scripts/",
+            paths: {
+                "jquery": "lib/jquery-1.10.2",
+                "login": "main/login"
+            },
+            shim: {
+                "login": ["jquery"]
+            },
+            urlArgs: "@FrontEndConfig.Instance.Version"
+
+        });
+        require(@key,function(r){
+            r.Init();
+        });
+    </script>
+
+</body>
+</html>
