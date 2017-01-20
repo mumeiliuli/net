@@ -78,6 +78,7 @@
     <Compile Include="Front\AnyTagExtensions.cs" />
     <Compile Include="Front\FrontEndConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="security\MD5Extend.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

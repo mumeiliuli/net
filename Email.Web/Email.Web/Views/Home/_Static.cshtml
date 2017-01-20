@@ -18,17 +18,19 @@
         require.config({
             baseUrl: "/Scripts/",
             paths: {
-                "jquery": "lib/jquery-1.10.2",
-                "login": "main/login"
+                "jquery": "lib/jquery/jquery-1.10.2",
+                "validate": "lib/jquery/jquery.validate",
+                "login": "main/login",
             },
             shim: {
-                "login": ["jquery"]
+                "validate": ["jquery"],
+                "login": ["validate"]
             },
             urlArgs: "@FrontEndConfig.Instance.Version"
 
         });
         require(ar,function(r){
-            r.Init();
+            r.init();
         });
     </script>
 

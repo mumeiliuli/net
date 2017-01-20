@@ -23,3 +23,4 @@ E:\study\vs\Email.Web\Email.Util\bin\Debug\zh-Hans\System.Web.WebPages.Deploymen
 E:\study\vs\Email.Web\Email.Util\bin\Debug\zh-Hans\System.Web.WebPages.Razor.resources.dll
 E:\study\vs\Email.Web\Email.Util\obj\Debug\Email.Util.dll
 E:\study\vs\Email.Web\Email.Util\obj\Debug\Email.Util.pdb
+E:\study\vs\Email.Web\Email.Util\obj\Debug\Email.Util.csprojResolveAssemblyReference.cache

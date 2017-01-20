@@ -68,3 +68,9 @@ E:\study\vs\Email.Web\Email.Web\bin\MySql.Data.Entity.EF6.dll
 E:\study\vs\Email.Web\Email.Web\bin\Emaill.Model.pdb
 E:\study\vs\Email.Web\Email.Web\bin\EntityFramework.xml
 E:\study\vs\Email.Web\Email.Web\bin\EntityFramework.SqlServer.xml
+E:\study\vs\Email.Web\Email.Web\bin\Autofac.dll
+E:\study\vs\Email.Web\Email.Web\bin\Autofac.Integration.Mvc.dll
+E:\study\vs\Email.Web\Email.Web\bin\Email.Service.dll
+E:\study\vs\Email.Web\Email.Web\bin\Email.Service.pdb
+E:\study\vs\Email.Web\Email.Web\bin\Autofac.xml
+E:\study\vs\Email.Web\Email.Web\bin\Autofac.Integration.Mvc.xml

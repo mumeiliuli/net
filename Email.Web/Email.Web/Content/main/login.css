@@ -32,3 +32,6 @@
 .title{
     margin-bottom:30px;
 }
+.login_error{
+    color:red;
+}
