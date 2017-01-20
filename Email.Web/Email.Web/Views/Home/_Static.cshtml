@@ -12,6 +12,9 @@
 <body>
     <script src="~/Scripts/lib/require.js"></script>
     <script>
+        var ar = [];
+        var name = '@key';
+        ar.push(name);
         require.config({
             baseUrl: "/Scripts/",
             paths: {
@@ -24,7 +27,7 @@
             urlArgs: "@FrontEndConfig.Instance.Version"
 
         });
-        require(@key,function(r){
+        require(ar,function(r){
             r.Init();
         });
     </script>

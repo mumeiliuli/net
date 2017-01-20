@@ -1,0 +1,16 @@
+E:\study\vs\Email.Web\Emaill.Model\bin\Debug\Emaill.Model.dll.config
+E:\study\vs\Email.Web\Emaill.Model\bin\Debug\Emaill.Model.dll
+E:\study\vs\Email.Web\Emaill.Model\bin\Debug\Emaill.Model.pdb
+E:\study\vs\Email.Web\Emaill.Model\bin\Debug\EntityFramework.dll
+E:\study\vs\Email.Web\Emaill.Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\study\vs\Email.Web\Emaill.Model\bin\Debug\MySql.Data.dll
+E:\study\vs\Email.Web\Emaill.Model\bin\Debug\MySql.Data.Entity.EF6.dll
+E:\study\vs\Email.Web\Emaill.Model\bin\Debug\EntityFramework.xml
+E:\study\vs\Email.Web\Emaill.Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\study\vs\Email.Web\Emaill.Model\obj\Debug\Emaill.Model.dll
+E:\study\vs\Email.Web\Emaill.Model\obj\Debug\Emaill.Model.pdb
+E:\study\vs\Email.Web\Emaill.Model\obj\Debug\Emaill.Model.Migrations.INIT.resources
+E:\study\vs\Email.Web\Emaill.Model\obj\Debug\Emaill.Model.csproj.GenerateResource.Cache
+E:\study\vs\Email.Web\Emaill.Model\obj\Debug\Emaill.Model.Migrations.updateuser.resources
+E:\study\vs\Email.Web\Emaill.Model\obj\Debug\Emaill.Model.Migrations.updateusername.resources
+E:\study\vs\Email.Web\Emaill.Model\obj\Debug\Emaill.Model.Migrations.updatedefault.resources

@@ -60,3 +60,11 @@ E:\study\vs\Email.Web\Email.Web\bin\zh-Hans\System.Web.WebPages.Razor.resources.
 E:\study\vs\Email.Web\Email.Web\obj\Debug\Email.Web.csprojResolveAssemblyReference.cache
 E:\study\vs\Email.Web\Email.Web\obj\Debug\Email.Web.dll
 E:\study\vs\Email.Web\Email.Web\obj\Debug\Email.Web.pdb
+E:\study\vs\Email.Web\Email.Web\bin\Emaill.Model.dll
+E:\study\vs\Email.Web\Email.Web\bin\EntityFramework.dll
+E:\study\vs\Email.Web\Email.Web\bin\EntityFramework.SqlServer.dll
+E:\study\vs\Email.Web\Email.Web\bin\MySql.Data.dll
+E:\study\vs\Email.Web\Email.Web\bin\MySql.Data.Entity.EF6.dll
+E:\study\vs\Email.Web\Email.Web\bin\Emaill.Model.pdb
+E:\study\vs\Email.Web\Email.Web\bin\EntityFramework.xml
+E:\study\vs\Email.Web\Email.Web\bin\EntityFramework.SqlServer.xml
