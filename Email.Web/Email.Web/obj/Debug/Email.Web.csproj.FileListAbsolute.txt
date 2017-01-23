@@ -74,3 +74,6 @@ E:\study\vs\Email.Web\Email.Web\bin\Email.Service.dll
 E:\study\vs\Email.Web\Email.Web\bin\Email.Service.pdb
 E:\study\vs\Email.Web\Email.Web\bin\Autofac.xml
 E:\study\vs\Email.Web\Email.Web\bin\Autofac.Integration.Mvc.xml
+E:\study\vs\Email.Web\Email.Web\bin\Email.International.dll
+E:\study\vs\Email.Web\Email.Web\bin\Email.International.pdb
+E:\study\vs\Email.Web\Email.Web\bin\en-us\Email.International.resources.dll
