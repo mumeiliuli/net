@@ -28,13 +28,28 @@
                 $(".login_error").html(error);  
             },
             submitHandler: function (form) {
-                alert("提交事件!");
                 self.submit($(form));
             }
         });
     },
     submit: function ($form) {
-
+        $.ajax({
+            url: "/Account/Login",
+            type:"post",
+            data: $form.serialize(),
+            dataType: "json",
+            success: function (r) {
+                if (r.Result) {
+                    var url = $("#return_url").val();
+                    if (url == null || url == ""||url=="\/") {
+                        url = "/Home/Index";
+                    }
+                    window.location.href = url;
+                } else {
+                    $(".login_error").html(r.Message);
+                }
+            }
+        })
     }
 
 

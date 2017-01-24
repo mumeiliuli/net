@@ -23,3 +23,17 @@ E:\study\vs\Email.Web\Email.Util\bin\Debug\zh-Hans\System.Web.WebPages.Deploymen
 E:\study\vs\Email.Web\Email.Util\bin\Debug\zh-Hans\System.Web.WebPages.Razor.resources.dll
 E:\study\vs\Email.Web\Email.Util\obj\Debug\Email.Util.dll
 E:\study\vs\Email.Web\Email.Util\obj\Debug\Email.Util.pdb
+E:\study\vs\Email.Web\Email.Util\bin\Debug\Microsoft.Owin.dll
+E:\study\vs\Email.Web\Email.Util\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+E:\study\vs\Email.Web\Email.Util\bin\Debug\Microsoft.Owin.Security.dll
+E:\study\vs\Email.Web\Email.Util\bin\Debug\Owin.dll
+E:\study\vs\Email.Web\Email.Util\bin\Debug\Microsoft.Owin.xml
+E:\study\vs\Email.Web\Email.Util\bin\Debug\Microsoft.Owin.Security.xml
+E:\study\vs\Email.Web\Email.Util\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+E:\study\vs\Email.Web\Email.Util\obj\Debug\Email.Util.csprojResolveAssemblyReference.cache
+E:\study\vs\Email.Web\Email.Util\bin\Debug\Emaill.Model.dll
+E:\study\vs\Email.Web\Email.Util\bin\Debug\MySql.Data.Entity.EF6.dll
+E:\study\vs\Email.Web\Email.Util\bin\Debug\EntityFramework.dll
+E:\study\vs\Email.Web\Email.Util\bin\Debug\MySql.Data.dll
+E:\study\vs\Email.Web\Email.Util\bin\Debug\Emaill.Model.pdb
+E:\study\vs\Email.Web\Email.Util\bin\Debug\EntityFramework.xml

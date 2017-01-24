@@ -77,3 +77,12 @@ E:\study\vs\Email.Web\Email.Web\bin\Autofac.Integration.Mvc.xml
 E:\study\vs\Email.Web\Email.Web\bin\Email.International.dll
 E:\study\vs\Email.Web\Email.Web\bin\Email.International.pdb
 E:\study\vs\Email.Web\Email.Web\bin\en-us\Email.International.resources.dll
+E:\study\vs\Email.Web\Email.Web\bin\Microsoft.Owin.dll
+E:\study\vs\Email.Web\Email.Web\bin\Owin.dll
+E:\study\vs\Email.Web\Email.Web\bin\Microsoft.Owin.Security.Cookies.dll
+E:\study\vs\Email.Web\Email.Web\bin\Microsoft.Owin.Security.dll
+E:\study\vs\Email.Web\Email.Web\bin\Microsoft.Owin.xml
+E:\study\vs\Email.Web\Email.Web\bin\Microsoft.Owin.Security.Cookies.xml
+E:\study\vs\Email.Web\Email.Web\bin\Microsoft.Owin.Security.xml
+E:\study\vs\Email.Web\Email.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\study\vs\Email.Web\Email.Web\bin\Microsoft.Owin.Host.SystemWeb.xml

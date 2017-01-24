@@ -13,6 +13,7 @@ using System.Web.Routing;
 
 namespace Email.Web.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         protected override void Initialize(RequestContext requestContext)
@@ -32,6 +33,7 @@ namespace Email.Web.Controllers
             Session["CurrentCulture"] = ddlCulture;
             return View("Index");
         }
+        
         public ActionResult Index()
         {
             Suggestion model = new Suggestion();
@@ -51,7 +53,7 @@ namespace Email.Web.Controllers
 
             return View();
         }
-
+        [AllowAnonymous]
         public ActionResult _Static(string key)
         {
             ViewBag.Key = key;

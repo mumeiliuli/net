@@ -74,6 +74,10 @@
     <Compile Include="Migrations\201701190807579_updatedefault.Designer.cs">
       <DependentUpon>201701190807579_updatedefault.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701240347141_updateuser1.cs" />
+    <Compile Include="Migrations\201701240347141_updateuser1.Designer.cs">
+      <DependentUpon>201701240347141_updateuser1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701190807579_updatedefault.resx">
       <DependentUpon>201701190807579_updatedefault.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701240347141_updateuser1.resx">
+      <DependentUpon>201701240347141_updateuser1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

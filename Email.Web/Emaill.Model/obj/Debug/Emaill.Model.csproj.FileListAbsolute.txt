@@ -14,3 +14,4 @@ E:\study\vs\Email.Web\Emaill.Model\obj\Debug\Emaill.Model.csproj.GenerateResourc
 E:\study\vs\Email.Web\Emaill.Model\obj\Debug\Emaill.Model.Migrations.updateuser.resources
 E:\study\vs\Email.Web\Emaill.Model\obj\Debug\Emaill.Model.Migrations.updateusername.resources
 E:\study\vs\Email.Web\Emaill.Model\obj\Debug\Emaill.Model.Migrations.updatedefault.resources
+E:\study\vs\Email.Web\Emaill.Model\obj\Debug\Emaill.Model.Migrations.updateuser1.resources

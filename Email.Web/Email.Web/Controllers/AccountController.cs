@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Email.Service;
+using Email.Util.security;
 
 namespace Email.Web.Controllers
 {
@@ -32,8 +33,19 @@ namespace Email.Web.Controllers
         [HttpPost]
         public ActionResult Login(AccountUser model)
         {
-            _service.CheckUser("llm", "assd");
-            return View();
+            try
+           {
+                var user = _service.CheckUser(model.UserName, model.Password);
+                _service.UpdateLoginTime(user);
+                AuthService.Login(user.Id, user.Account, user.Password);
+                return JsonOK("");
+            }
+            catch(Exception ex)
+            {
+                return JsonError(ex.Message);
+            }
+            
+            
         }
 
 
