@@ -1,0 +1,9 @@
+E:\study\vs\Email.Web\Email.International\bin\Debug\Email.International.dll
+E:\study\vs\Email.Web\Email.International\bin\Debug\Email.International.pdb
+E:\study\vs\Email.Web\Email.International\bin\Debug\en-us\Email.International.resources.dll
+E:\study\vs\Email.Web\Email.International\obj\Debug\Email.International.Resource.resources
+E:\study\vs\Email.Web\Email.International\obj\Debug\Email.International.Resource.en-us.resources
+E:\study\vs\Email.Web\Email.International\obj\Debug\Email.International.csproj.GenerateResource.Cache
+E:\study\vs\Email.Web\Email.International\obj\Debug\en-us\Email.International.resources.dll
+E:\study\vs\Email.Web\Email.International\obj\Debug\Email.International.dll
+E:\study\vs\Email.Web\Email.International\obj\Debug\Email.International.pdb
