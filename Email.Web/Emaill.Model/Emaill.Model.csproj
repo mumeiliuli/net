@@ -80,6 +80,8 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountUser.cs" />
+    <Compile Include="Models\Album.cs" />
+    <Compile Include="Models\Pictures.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

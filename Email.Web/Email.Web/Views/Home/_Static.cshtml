@@ -20,11 +20,15 @@
             paths: {
                 "jquery": "lib/jquery/jquery-1.10.2",
                 "validate": "lib/jquery/jquery.validate",
+                "easyui": "lib/jquery/jquery.easyui.min",
                 "login": "main/login",
+                "home_index": "main/home_index",
             },
             shim: {
                 "validate": ["jquery"],
-                "login": ["validate"]
+                "easyui": ["jquery"],
+                "login": ["validate"],
+                "home_index":["easyui"]
             },
             urlArgs: "@FrontEndConfig.Instance.Version"
 

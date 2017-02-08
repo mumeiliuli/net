@@ -18,10 +18,10 @@
         <form class="login_form" role="form">
             <h3 class="title">秘密花园帐号登录</h3>
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="用户名" name="username">
+                <input type="text" class="form-control" placeholder="用户名" name="username" value="llm">
             </div>
             <div class="input-group">
-                <input type="password" class="form-control" placeholder="密码" name="password">
+                <input type="password" class="form-control" placeholder="密码" name="password" value="llm">
             </div>
             <div class="input-group">
                 <input type="submit" class="form-control btn-info" value="登录">
@@ -32,12 +32,8 @@
         </form>
     </div>
   <div class="login_bg"></div>
-  
-
-  @{ 
-
-      Html.RenderAction("_Static", "Home", new { key = "login" });
-  }
+  @Html.RenderJs("Scripts/lib/jquery/jquery-1.10.2.js", "Scripts/lib/jquery/jquery.validate.js")
+  @Html.RenderJs("Scripts/main/login.js")
 </body>
 </html>
 

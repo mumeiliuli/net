@@ -74,6 +74,29 @@ namespace Email.Util.Front
             return MvcHtmlString.Create(sb.ToString());
         }
 
+        public static MvcHtmlString RenderJs(this HtmlHelper helper, params string[] prams)
+        {
+            var version = _config.Version;
+            if (prams.Length == 0)
+            {
+                return MvcHtmlString.Create("");
+            }
+            List<string> listPrams = prams.ToList();
+
+            StringBuilder sb = new StringBuilder();
+            foreach (var p in listPrams)
+            {
+
+                sb.Append(AnyTagExtensions.AnyTag(helper, "script", new
+                {
+                    src= string.Format("{0}/{1}?v={2}", _config.Root, p, version)
+                }
+                ));
+
+            }
+            return MvcHtmlString.Create(sb.ToString());
+        }
+
         /// <summary>
         /// 网站图标链接
         /// </summary>
@@ -91,4 +114,6 @@ namespace Email.Util.Front
             return MvcHtmlString.Create(html);
         }
     }
+
+
 }

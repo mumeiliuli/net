@@ -4,40 +4,38 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <title>@ViewBag.Title - 秘密花园</title>
+    @Html.RenderCss("Content/lib/easyui/default/easyui.css", "Content/lib/easyui/icon.css", "Content/lib/bootstrap/bootstrap.css")
+    @Html.RenderCss("Content/main/base.css")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("应用程序名称", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("主页", "Index", "Home")</li>
-                    <li>@Html.ActionLink("关于", "About", "Home")</li>
-                    <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
-                </ul>
+    @Html.Partial("_Header")
+    <div class="content">
+        <div class="content_left">
+            <div class="easyui-accordion" style="width:200px;">
+                <div title="我的空间" iconCls="icon-edit">
+                    <ul class="nav nav-stacked">
+                        <li class="active"><a href="/Pic/Index" onfocus="this.blur();">相册</a></li>
+                        <li><a href="#" onfocus="this.blur();">小说</a></li>
+                       
+                    </ul>
+                </div>
+                <div title="我的主页" iconCls="icon-man" selected="true">
+                    <ul>
+                        <li>说说</li>
+                        <li>小说</li>
+                    </ul>
+                </div>
+
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
-        </footer>
-    </div>
+        <div class="content_right">
+            @RenderBody()
+        </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+        
+    </div>
+    @Html.RenderJs("Scripts/lib/jquery/jquery-1.10.2.js", "Scripts/lib/jquery/jquery.easyui.min.js", "Scripts/lib/bootstrap.js")
     @RenderSection("scripts", required: false)
 </body>
 </html>

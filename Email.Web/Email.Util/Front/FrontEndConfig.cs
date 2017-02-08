@@ -38,7 +38,7 @@ namespace Email.Util.Front
                 var version = ConfigurationManager.AppSettings["UrlArgs"];
                 if (string.IsNullOrEmpty(version))
                 {
-                    return DateTime.Now.ToString("yyMMddHHmms");
+                    return DateTime.Now.ToString("yyMMddHHmm");
                 }else
                 {
                     return version;

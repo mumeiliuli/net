@@ -1,12 +1,10 @@
-﻿define({
-    init: function () {
-        var self = this;
+﻿$(function(){
+    function init() {
         $(".login_bg").width($(window).width());
         $(".login_bg").height($(window).height());
-        self.validate();
-    },
-    validate: function () {
-        var self = this;
+        validate();
+    }
+    function validate() {
         $(".login_form").validate({
             rules: {
                 username: {
@@ -28,11 +26,11 @@
                 $(".login_error").html(error);  
             },
             submitHandler: function (form) {
-                self.submit($(form));
+                submit($(form));
             }
         });
-    },
-    submit: function ($form) {
+    }
+    function submit($form) {
         $.ajax({
             url: "/Account/Login",
             type:"post",
@@ -51,6 +49,5 @@
             }
         })
     }
-
-
+    init();
 })
