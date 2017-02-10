@@ -86,3 +86,7 @@ E:\study\vs\Email.Web\Email.Web\bin\Microsoft.Owin.Security.Cookies.xml
 E:\study\vs\Email.Web\Email.Web\bin\Microsoft.Owin.Security.xml
 E:\study\vs\Email.Web\Email.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
 E:\study\vs\Email.Web\Email.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\study\vs\Email.Web\Email.Web\bin\log4net.dll
+E:\study\vs\Email.Web\Email.Web\bin\log4net.xml
+E:\study\vs\Email.Web\Email.Web\bin\Microsoft.AspNet.Identity.Core.dll
+E:\study\vs\Email.Web\Email.Web\bin\Microsoft.AspNet.Identity.Core.xml

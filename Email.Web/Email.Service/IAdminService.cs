@@ -1,5 +1,6 @@
 ﻿using Emaill.Model;
 using Emaill.Model.Models;
+using Emaill.Model.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,12 @@ namespace Email.Service
         void UpdateLoginTime(AccountUser user);
 
         AccountUser GetUserByID(string userid);
+
+        void AddImg(string name, string userId, string[] urls);
+
+        List<AlbumView> GetAlbumList(string userid);
+
+        List<Album> GetAlbums(string userid);
 
     }
 }

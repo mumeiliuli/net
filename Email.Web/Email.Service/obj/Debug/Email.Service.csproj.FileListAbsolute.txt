@@ -2,10 +2,6 @@ E:\study\vs\Email.Web\Email.Service\bin\Debug\Email.Service.dll
 E:\study\vs\Email.Web\Email.Service\bin\Debug\Email.Service.pdb
 E:\study\vs\Email.Web\Email.Service\bin\Debug\Email.Util.dll
 E:\study\vs\Email.Web\Email.Service\bin\Debug\Emaill.Model.dll
-E:\study\vs\Email.Web\Email.Service\bin\Debug\Owin.dll
-E:\study\vs\Email.Web\Email.Service\bin\Debug\Microsoft.Owin.dll
-E:\study\vs\Email.Web\Email.Service\bin\Debug\Microsoft.Owin.Security.Cookies.dll
-E:\study\vs\Email.Web\Email.Service\bin\Debug\Microsoft.Owin.Security.dll
 E:\study\vs\Email.Web\Email.Service\bin\Debug\System.Web.Mvc.dll
 E:\study\vs\Email.Web\Email.Service\bin\Debug\System.Web.WebPages.dll
 E:\study\vs\Email.Web\Email.Service\bin\Debug\MySql.Data.Entity.EF6.dll
@@ -16,9 +12,6 @@ E:\study\vs\Email.Web\Email.Service\bin\Debug\System.Web.WebPages.Deployment.dll
 E:\study\vs\Email.Web\Email.Service\bin\Debug\MySql.Data.dll
 E:\study\vs\Email.Web\Email.Service\bin\Debug\Email.Util.pdb
 E:\study\vs\Email.Web\Email.Service\bin\Debug\Emaill.Model.pdb
-E:\study\vs\Email.Web\Email.Service\bin\Debug\Microsoft.Owin.xml
-E:\study\vs\Email.Web\Email.Service\bin\Debug\Microsoft.Owin.Security.Cookies.xml
-E:\study\vs\Email.Web\Email.Service\bin\Debug\Microsoft.Owin.Security.xml
 E:\study\vs\Email.Web\Email.Service\bin\Debug\System.Web.Mvc.xml
 E:\study\vs\Email.Web\Email.Service\bin\Debug\System.Web.WebPages.xml
 E:\study\vs\Email.Web\Email.Service\bin\Debug\System.Web.Razor.xml
@@ -32,3 +25,5 @@ E:\study\vs\Email.Web\Email.Service\bin\Debug\zh-Hans\System.Web.WebPages.Deploy
 E:\study\vs\Email.Web\Email.Service\obj\Debug\Email.Service.csprojResolveAssemblyReference.cache
 E:\study\vs\Email.Web\Email.Service\obj\Debug\Email.Service.dll
 E:\study\vs\Email.Web\Email.Service\obj\Debug\Email.Service.pdb
+E:\study\vs\Email.Web\Email.Service\bin\Debug\log4net.dll
+E:\study\vs\Email.Web\Email.Service\bin\Debug\log4net.xml

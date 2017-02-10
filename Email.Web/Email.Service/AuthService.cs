@@ -26,27 +26,27 @@ namespace Email.Service
             HttpContext.Current.Response.Cookies.Add(cookie);
             return cookie.Value;
         }
-
-        public static AccountUser User
+        public static Token GetUser(string cookie)
+        {
+            Token token = new Token();
+            token.Decode(cookie);
+            if (token.IsExpired) throw new Exception("已过期");
+            IAdminService service = new AdminService();
+            var user = service.GetUserByID(token.UserId);
+            if (user != null && token.CheckSign(user.Id, user.Account, user.Password))
+            {
+                return token;
+            }
+            throw new Exception("已过期");
+        }
+        public static Token User
         {
             get
             {
                 try
                 {
                     string cookie = HttpContext.Current.Request.Cookies[Token.CookieName].Value;
-                    Token token = new Token();
-                    token.Decode(cookie);
-                    if (token.IsExpired) throw new Exception("已过期");
-                    IAdminService service = new AdminService();
-                    var user=service.GetUserByID(token.UserId);
-                    if (user != null && token.CheckSign(user.Id, user.Account, user.Password))
-                    {
-                        return user;
-                    }else
-                    {
-                        throw new Exception("登录已过期");
-                    }
-
+                    return GetUser(cookie);
                 }
                 catch(Exception ex)
                 {
