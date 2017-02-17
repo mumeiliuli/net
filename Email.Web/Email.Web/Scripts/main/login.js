@@ -13,6 +13,19 @@
                 password: {
                     required: true,
                 },
+                verify: {
+                    required: true,
+                    remote: {
+                        url: '/Account/CheckVerifyCode',
+                        type: 'get',
+                        data: {
+                            verifycode: function () {
+                                return $("#verify").val();
+                            }
+                        }
+
+                    }
+                }
             },
             messages: {
                 username: {
@@ -20,6 +33,10 @@
                 },
                 password: {
                     required: "密码不能为空",
+                },
+                verify: {
+                    required: "验证码不能为空",
+                    remote:"验证码错误"
                 },
             },
             errorPlacement: function(error, element) {  

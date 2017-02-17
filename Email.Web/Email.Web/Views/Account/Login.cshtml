@@ -24,6 +24,9 @@
                 <input type="password" class="form-control" placeholder="密码" name="password" value="llm">
             </div>
             <div class="input-group">
+                <input type="text" placeholder="请输入验证码"  name="verify" class="form-control" id="verify"><img src="/Account/GetImgVerifyChars" onclick="this.src='/Account/GetImgVerifyChars?time='+new Date()"/>
+            </div>
+            <div class="input-group">
                 <input type="submit" class="form-control btn-info" value="登录">
             </div>
             <div class="input-group">

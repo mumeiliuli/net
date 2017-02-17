@@ -28,6 +28,10 @@
 }
 .input-group{
     margin-bottom:20px;
+    text-align:left;
+}
+.input-group .form-control{
+    border-radius:5px !important;
 }
 .title{
     margin-bottom:30px;
@@ -35,3 +39,7 @@
 .login_error{
     color:red;
 }
+input#verify{
+    width:80%  !important;
+}
+
