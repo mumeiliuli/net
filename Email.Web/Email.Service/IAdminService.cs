@@ -16,6 +16,12 @@ namespace Email.Service
 
         AccountUser GetUserByID(string userid);
 
+        List<AccountUser> GetUserList();
+
+        void AddUser(AccountUser user);
+        bool UpdateUser(AccountUser user);
+        bool DeleteUser(string id);
+
         void AddImg(string name, string userId, string[] urls);
 
         List<AlbumView> GetAlbumList(string userid);

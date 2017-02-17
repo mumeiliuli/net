@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace Emaill.Model
 {
-    [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
     public class EmailDbContext:DbContext
     {
         public EmailDbContext(): base("Name=emailContext")

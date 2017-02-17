@@ -63,8 +63,6 @@ E:\study\vs\Email.Web\Email.Web\obj\Debug\Email.Web.pdb
 E:\study\vs\Email.Web\Email.Web\bin\Emaill.Model.dll
 E:\study\vs\Email.Web\Email.Web\bin\EntityFramework.dll
 E:\study\vs\Email.Web\Email.Web\bin\EntityFramework.SqlServer.dll
-E:\study\vs\Email.Web\Email.Web\bin\MySql.Data.dll
-E:\study\vs\Email.Web\Email.Web\bin\MySql.Data.Entity.EF6.dll
 E:\study\vs\Email.Web\Email.Web\bin\Emaill.Model.pdb
 E:\study\vs\Email.Web\Email.Web\bin\EntityFramework.xml
 E:\study\vs\Email.Web\Email.Web\bin\EntityFramework.SqlServer.xml
@@ -90,3 +88,12 @@ E:\study\vs\Email.Web\Email.Web\bin\log4net.dll
 E:\study\vs\Email.Web\Email.Web\bin\log4net.xml
 E:\study\vs\Email.Web\Email.Web\bin\Microsoft.AspNet.Identity.Core.dll
 E:\study\vs\Email.Web\Email.Web\bin\Microsoft.AspNet.Identity.Core.xml
+E:\study\vs\Email.Web\Email.Web\bin\AutoMapper.dll
+E:\study\vs\Email.Web\Email.Web\bin\AutoMapper.xml
+E:\study\vs\Email.Web\Email.Web\bin\ServiceStack.Common.dll
+E:\study\vs\Email.Web\Email.Web\bin\ServiceStack.Interfaces.dll
+E:\study\vs\Email.Web\Email.Web\bin\ServiceStack.Redis.dll
+E:\study\vs\Email.Web\Email.Web\bin\ServiceStack.Text.dll
+E:\study\vs\Email.Web\Email.Web\bin\ServiceStack.Common.xml
+E:\study\vs\Email.Web\Email.Web\bin\ServiceStack.Redis.xml
+E:\study\vs\Email.Web\Email.Web\bin\ServiceStack.Text.xml

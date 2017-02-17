@@ -14,7 +14,7 @@ using System.Web.Routing;
 namespace Email.Web.Controllers
 {
     [Authorize]
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         protected override void Initialize(RequestContext requestContext)
         {

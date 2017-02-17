@@ -53,6 +53,31 @@ namespace Email.Service
             _db.Entry<AccountUser>(user).State = System.Data.Entity.EntityState.Modified;
             _db.SaveChanges();
         }
+        public List<AccountUser> GetUserList()
+        {
+            return _db.AccountUsers.ToList();
+        }
+
+        public void AddUser(AccountUser user)
+        {
+            user.Id = GenerateId;
+            user.Password = user.Password.ToMD5();
+            _db.AccountUsers.Add(user);
+            _db.SaveChanges();
+        }
+        public bool UpdateUser(AccountUser user)
+        {
+            _db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+            return _db.SaveChanges()>0;
+            
+        }
+
+        public bool DeleteUser(string id)
+        {
+            var user=GetUserByID(id);
+            _db.AccountUsers.Remove(user);
+           return  _db.SaveChanges()>0;
+        }
         #endregion
 
         #region 图片
@@ -110,6 +135,13 @@ namespace Email.Service
         {
             return _db.Albums.Where(t => t.UserId == userid).ToList();
         }
+
+        
+
+
+
+
+
 
         #endregion
     }
