@@ -28,5 +28,8 @@ namespace Email.Service
 
         List<Album> GetAlbums(string userid);
 
+        void AddSchedule(Schedule schedule);
+        bool EditSchedule(Schedule schedule);
+
     }
 }

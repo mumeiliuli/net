@@ -136,12 +136,21 @@ namespace Email.Service
             return _db.Albums.Where(t => t.UserId == userid).ToList();
         }
 
-        
+        #endregion
 
+        #region 日程
+        public void AddSchedule(Schedule schedule)
+        {
+            schedule.Id = GenerateId;
+            _db.Schedules.Add(schedule);
+            _db.SaveChanges();
+        }
 
-
-
-
+        public bool EditSchedule(Schedule schedule)
+        {
+            _db.Entry(schedule).State = System.Data.Entity.EntityState.Modified;
+            return _db.SaveChanges() > 0;
+        }
 
         #endregion
     }

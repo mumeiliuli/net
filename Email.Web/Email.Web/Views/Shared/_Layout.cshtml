@@ -15,9 +15,9 @@
             <div class="easyui-accordion" style="width:200px;">
                 <div title="我的空间" iconCls="icon-edit">
                     <ul class="nav nav-stacked">
-                        <li class="active"><a href="/Pic/Index" onfocus="this.blur();">相册</a></li>
-                        <li><a href="/User/Index" onfocus="this.blur();">用户</a></li>
-                       
+                        <li class="active"><a href="/Pic/Index">相册</a></li>
+                        <li><a href="/User/Index">用户</a></li>
+                        <li><a href="/Schedule/Index">日程</a></li>
                     </ul>
                 </div>
                 <div title="我的主页" iconCls="icon-man" selected="true">
@@ -35,7 +35,7 @@
 
         
     </div>
-    @Html.RenderJs("Scripts/lib/jquery/jquery-1.10.2.js", "Scripts/lib/jquery/jquery.easyui.min.js", "Scripts/lib/bootstrap.js", "Scripts/lib/jquery/jquery.tmpl.js")
+    @Html.RenderJs("Scripts/lib/jquery/jquery.js", "Scripts/lib/jquery/jquery.easyui.min.js", "Scripts/lib/bootstrap.js", "Scripts/lib/jquery/jquery.tmpl.js")
     @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -10,3 +10,4 @@ E:\study\vs\Email.Web\Emaill.Model\obj\Debug\Emaill.Model.pdb
 E:\study\vs\Email.Web\Emaill.Model\obj\Debug\Emaill.Model.Migrations.init.resources
 E:\study\vs\Email.Web\Emaill.Model\obj\Debug\Emaill.Model.csproj.GenerateResource.Cache
 E:\study\vs\Email.Web\Emaill.Model\obj\Debug\Emaill.Model.csprojResolveAssemblyReference.cache
+E:\study\vs\Email.Web\Emaill.Model\obj\Debug\Emaill.Model.Migrations.addschedule.resources

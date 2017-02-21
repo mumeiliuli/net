@@ -16,5 +16,6 @@ namespace Emaill.Model
         public DbSet<AccountUser> AccountUsers { get; set; }
         public DbSet<Album> Albums { get; set; }
         public DbSet<Pictures> Pictures { get; set; }
+        public DbSet<Schedule> Schedules { get; set; }
     }
 }
