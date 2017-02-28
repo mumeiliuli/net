@@ -12,6 +12,7 @@ namespace Emaill.Model.Models
         public AccountUser()
         {
             Album = new HashSet<Album>();
+            NoteWord = new HashSet<NoteWord>();
         }
 
         [MaxLength(32)]
@@ -31,5 +32,6 @@ namespace Emaill.Model.Models
         public DateTime CreateTime { get; set; }
 
         public virtual ICollection<Album> Album { get; set; }
+        public virtual ICollection<NoteWord> NoteWord { get; set; }
     }
 }

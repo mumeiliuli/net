@@ -35,3 +35,11 @@ E:\study\vs\Email.Web\Email.Util\bin\Debug\log4net.dll
 E:\study\vs\Email.Web\Email.Util\bin\Debug\log4net.xml
 E:\study\vs\Email.Web\Email.Util\bin\Debug\AutoMapper.dll
 E:\study\vs\Email.Web\Email.Util\bin\Debug\AutoMapper.xml
+E:\study\vs\Email.Web\Email.Util\bin\Debug\RabbitMQ.Client.dll
+E:\study\vs\Email.Web\Email.Util\bin\Debug\RabbitMQ.Client.xml
+E:\study\vs\Email.Web\Email.Util\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\study\vs\Email.Web\Email.Util\bin\Debug\SolrNet.dll
+E:\study\vs\Email.Web\Email.Util\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\study\vs\Email.Web\Email.Util\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\study\vs\Email.Web\Email.Util\bin\Debug\SolrNet.pdb
+E:\study\vs\Email.Web\Email.Util\bin\Debug\SolrNet.xml

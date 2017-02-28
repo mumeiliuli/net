@@ -13,7 +13,7 @@ namespace Email.Service
     public class AdminService: IAdminService
     {
         private EmailDbContext _db;
-        private readonly string PICURL = "http://localhost:4797/";
+        public static readonly string PICURL = "http://localhost:4797/";
 
         public AdminService()
         {
@@ -151,6 +151,12 @@ namespace Email.Service
             _db.Entry(schedule).State = System.Data.Entity.EntityState.Modified;
             return _db.SaveChanges() > 0;
         }
+
+        public List<Schedule> GetSchedules()
+        {
+            return _db.Schedules.ToList();
+        }
+
 
         #endregion
     }

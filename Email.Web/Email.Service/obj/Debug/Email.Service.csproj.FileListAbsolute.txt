@@ -27,3 +27,5 @@ E:\study\vs\Email.Web\Email.Service\bin\Debug\log4net.dll
 E:\study\vs\Email.Web\Email.Service\bin\Debug\log4net.xml
 E:\study\vs\Email.Web\Email.Service\bin\Debug\AutoMapper.dll
 E:\study\vs\Email.Web\Email.Service\bin\Debug\AutoMapper.xml
+E:\study\vs\Email.Web\Email.Service\bin\Debug\RabbitMQ.Client.dll
+E:\study\vs\Email.Web\Email.Service\bin\Debug\RabbitMQ.Client.xml

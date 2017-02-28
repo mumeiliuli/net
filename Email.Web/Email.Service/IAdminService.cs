@@ -31,5 +31,7 @@ namespace Email.Service
         void AddSchedule(Schedule schedule);
         bool EditSchedule(Schedule schedule);
 
+        List<Schedule> GetSchedules();
+
     }
 }

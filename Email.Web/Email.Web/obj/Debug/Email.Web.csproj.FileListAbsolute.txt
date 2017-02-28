@@ -97,3 +97,5 @@ E:\study\vs\Email.Web\Email.Web\bin\ServiceStack.Text.dll
 E:\study\vs\Email.Web\Email.Web\bin\ServiceStack.Common.xml
 E:\study\vs\Email.Web\Email.Web\bin\ServiceStack.Redis.xml
 E:\study\vs\Email.Web\Email.Web\bin\ServiceStack.Text.xml
+E:\study\vs\Email.Web\Email.Web\bin\RabbitMQ.Client.dll
+E:\study\vs\Email.Web\Email.Web\bin\RabbitMQ.Client.xml
