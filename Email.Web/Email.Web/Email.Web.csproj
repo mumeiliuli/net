@@ -210,6 +210,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AngularController.cs" />
+    <Compile Include="Controllers\ChatController.cs" />
     <Compile Include="Controllers\NoteController.cs" />
     <Compile Include="Controllers\PicController.cs" />
     <Compile Include="Controllers\ScheduleController.cs" />
@@ -233,6 +235,7 @@
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\main\calendar.css" />
     <Content Include="Content\lib\toastr.css" />
+    <Content Include="Content\main\chat.css" />
     <Content Include="Scripts\jquery-ui\AUTHORS.txt" />
     <Content Include="Scripts\jquery-ui\external\jquery\jquery.js" />
     <Content Include="Scripts\jquery-ui\images\ui-icons_444444_256x240.png" />
@@ -251,6 +254,8 @@
     <Content Include="Scripts\jquery-ui\jquery-ui.theme.css" />
     <Content Include="Scripts\jquery-ui\jquery-ui.theme.min.css" />
     <Content Include="Scripts\jquery-ui\LICENSE.txt" />
+    <Content Include="Scripts\lib\angular\angular.js" />
+    <Content Include="Scripts\lib\jquery.signalR-2.2.1.js" />
     <Content Include="Scripts\lib\calendar\fullcalendar.css" />
     <Content Include="Scripts\lib\calendar\fullcalendar.js" />
     <Content Include="Scripts\lib\calendar\fullcalendar.min.css" />
@@ -953,6 +958,7 @@
     <Content Include="Scripts\lib\kindeditor\themes\qq\qq.css" />
     <Content Include="Scripts\lib\kindeditor\themes\simple\simple.css" />
     <Content Include="Scripts\lib\toastr\spin.js" />
+    <Content Include="Scripts\main\angular_test.js" />
     <Content Include="Scripts\main\home_index.js" />
     <Content Include="Scripts\main\login.js" />
     <Content Include="Scripts\main\note.js" />
@@ -1001,6 +1007,8 @@
     <Content Include="Scripts\lib\colorpicker\images\Thumbs.db" />
     <Content Include="Views\Note\Add.cshtml" />
     <Content Include="Views\Test\Toastr.cshtml" />
+    <Content Include="Views\Chat\Index.cshtml" />
+    <Content Include="Views\Angular\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Email.International\Email.International.csproj">

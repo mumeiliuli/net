@@ -99,3 +99,11 @@ E:\study\vs\Email.Web\Email.Web\bin\ServiceStack.Redis.xml
 E:\study\vs\Email.Web\Email.Web\bin\ServiceStack.Text.xml
 E:\study\vs\Email.Web\Email.Web\bin\RabbitMQ.Client.dll
 E:\study\vs\Email.Web\Email.Web\bin\RabbitMQ.Client.xml
+E:\study\vs\Email.Web\Email.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+E:\study\vs\Email.Web\Email.Web\bin\SolrNet.dll
+E:\study\vs\Email.Web\Email.Web\bin\Microsoft.Practices.ServiceLocation.dll
+E:\study\vs\Email.Web\Email.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+E:\study\vs\Email.Web\Email.Web\bin\SolrNet.pdb
+E:\study\vs\Email.Web\Email.Web\bin\SolrNet.xml
+E:\study\vs\Email.Web\Email.Web\bin\Microsoft.Practices.ServiceLocation.pdb
+E:\study\vs\Email.Web\Email.Web\bin\Microsoft.Practices.ServiceLocation.xml

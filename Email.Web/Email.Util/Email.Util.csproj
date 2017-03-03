@@ -114,7 +114,11 @@
     <Compile Include="Front\AnyTagExtensions.cs" />
     <Compile Include="Front\DynamicData.cs" />
     <Compile Include="Front\FrontEndConfig.cs" />
+    <Compile Include="json\JsonTest.cs" />
+    <Compile Include="other\ByteTest.cs" />
+    <Compile Include="other\CloneTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reflex\MethodTest.cs" />
     <Compile Include="security\MD5Extend.cs" />
     <Compile Include="security\Rand.cs" />
     <Compile Include="security\Token.cs" />
