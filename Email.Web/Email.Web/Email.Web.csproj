@@ -212,6 +212,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AngularController.cs" />
     <Compile Include="Controllers\ChatController.cs" />
+    <Compile Include="Controllers\EasyUiController.cs" />
     <Compile Include="Controllers\NoteController.cs" />
     <Compile Include="Controllers\PicController.cs" />
     <Compile Include="Controllers\ScheduleController.cs" />
@@ -1009,6 +1010,10 @@
     <Content Include="Views\Test\Toastr.cshtml" />
     <Content Include="Views\Chat\Index.cshtml" />
     <Content Include="Views\Angular\Index.cshtml" />
+    <Content Include="Views\EasyUi\Accordion.cshtml" />
+    <Content Include="Views\EasyUi\Content.cshtml" />
+    <Content Include="Views\EasyUi\Calendar.cshtml" />
+    <Content Include="Views\EasyUi\ComboBox.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Email.International\Email.International.csproj">
