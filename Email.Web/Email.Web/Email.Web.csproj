@@ -1014,6 +1014,8 @@
     <Content Include="Views\EasyUi\Content.cshtml" />
     <Content Include="Views\EasyUi\Calendar.cshtml" />
     <Content Include="Views\EasyUi\ComboBox.cshtml" />
+    <Content Include="Views\EasyUi\Date.cshtml" />
+    <Content Include="Views\EasyUi\Draggable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Email.International\Email.International.csproj">
