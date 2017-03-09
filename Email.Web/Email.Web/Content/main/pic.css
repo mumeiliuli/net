@@ -1,0 +1,30 @@
+﻿.pic_btn a{
+    margin-right:10px;
+}
+.upload{
+    width:100%;
+}
+.hidden-xs {
+    display: inherit !important;
+}
+#dlg{
+    width:800px;
+    height:500px;
+    padding:10px;
+}
+ul#albums{
+    width:100%;
+    overflow:auto;
+    height:500px;
+}
+ul#albums  li{
+  float:left;
+  margin:10px 20px;
+  position:relative;
+  text-align:center;
+}
+p.name{
+    text-align:center;
+    font-size:12px;
+}
+

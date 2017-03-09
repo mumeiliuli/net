@@ -1,0 +1,51 @@
+﻿@model List<Emaill.Model.Models.Album>
+@{
+    ViewBag.Title = "相册";
+}
+@Html.RenderCss("Scripts/lib/fileinput/fileinput.css")
+@Html.RenderCss("Scripts/lib/fileinput/explorer/theme.css")
+@Html.RenderCss("Content/main/pic.css")
+<div class="pic_btn">
+    <button class="btn btn-info" id="upload_btn">上传图片</button>
+    <a class="btn btn-warning">创建相册</a>
+</div>
+<div class="list">
+    <ul id="albums"></ul>
+</div>
+
+<div id="dlg" class="easyui-dialog" closed="true" buttons="#dlg-buttons">
+    <div class="upload">
+        <div class="form-group">
+            <span>请选择相册：</span>
+            <select class="easyui-combobox" id="albumname" >
+                @foreach(var m in Model)
+                {
+                  <option value="@m.Name">@m.Name</option>
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <input id="upload_pic" type="file" multiple name="img">
+        </div>
+    </div>
+</div>
+<div id="dlg-buttons">
+    <button class="easyui-linkbutton" iconCls="icon-ok" id="save_img">保存</button>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
+</div>
+
+
+@section scripts{
+    <script type="text/x-jquery-tmpl" id="list_tmpl">
+        {{each datas}}
+        <li data-id="${Id}">
+            <img src="${LastImg}" width="120" height="100" />
+            <p class="name">${Name}</p>
+        </li>
+        {{/each}}
+    </script>
+    @Html.RenderJs("Scripts/lib/fileinput/fileinput.js", "Scripts/lib/fileinput/locales/zh.js", "Scripts/lib/fileinput/explorer/theme.js")
+    @Html.RenderJs("Scripts/main/pic.js")
+}
+
+

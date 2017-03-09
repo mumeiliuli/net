@@ -1,0 +1,142 @@
+﻿
+@{
+    ViewBag.Title = "拖曳";
+}
+<style type="text/css">
+    .title {
+        margin-bottom: 10px;
+    }
+
+    .dragitem {
+        border: 1px solid #ccc;
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+    .targetarea {
+        border: 1px solid red;
+        height: 150px;
+    }
+
+    .proxy {
+        border: 1px solid #ccc;
+        width: 80px;
+        background: #fafafa;
+    }
+    .drag-item{
+			list-style-type:none;
+			display:block;
+			padding:5px;
+			border:1px solid #ccc;
+			margin:2px;
+			width:300px;
+			background:#fafafa;
+			color:#444;
+		}
+		.indicator{
+			position:absolute;
+			font-size:9px;
+			width:10px;
+			height:10px;
+			display:none;
+			color:red;
+		}
+</style>
+<div class="easyui-draggable" data-options="handle:'#title'" style="width:200px;height:150px;background:#fafafa;border:1px solid #ccc;margin-top:10px">
+    <div id="title" style="padding:5px;background:#ccc;color:#fff">Title</div>
+</div>
+<div class="easyui-panel" style="position:relative;overflow:hidden;width:500px;height:300px;margin-top:10px;">
+    <div class="easyui-draggable" data-options="onDrag:onDrag" style="width:100px;height:100px;background:#fafafa;border:1px solid #ccc;">
+    </div>
+</div>
+<div class="easyui-panel" style="margin-top:10px;float:left">
+    <div style="float:left;width:200px;margin-right:20px;">
+        <div class="title">Source</div>
+        <div>
+            <div class="dragitem">Apple</div>
+            <div class="dragitem">Peach</div>
+            <div class="dragitem">Orange</div>
+        </div>
+    </div>
+    <div style="float:left;width:200px;">
+        <div class="title">Target</div>
+        <div class="easyui-droppable targetarea"
+             data-options=
+             "accept: '.dragitem' ,
+             onDragEnter:function(e,source){
+             $(this).html('enter');
+             },
+             onDragLeave: function(e,source){
+             $(this).html('leave');
+             },
+             onDrop: function(e,source){
+             $(this).html($(source).html() + ' dropped');
+             }
+             ">
+        </div>
+    </div>
+    <div style="margin-left:20px;float:left">
+        <ul style="margin:0;padding:0;margin-left:10px;">
+            <li class="drag-item">Drag 1</li>
+            <li class="drag-item">Drag 2</li>
+            <li class="drag-item">Drag 3</li>
+            <li class="drag-item">Drag 4</li>
+            <li class="drag-item">Drag 5</li>
+            <li class="drag-item">Drag 6</li>
+        </ul>
+    </div>
+</div>
+
+@section scripts{
+
+    <script>
+        function onDrag(e) {
+            var d = e.data;
+            if (d.left < 0) { d.left = 0 }
+            if (d.top < 0) { d.top = 0 }
+            if (d.left + $(d.target).outerWidth() > $(d.parent).width()) {
+                d.left = $(d.parent).width() - $(d.target).outerWidth();
+            }
+            if (d.top + $(d.target).outerHeight() > $(d.parent).height()) {
+                d.top = $(d.parent).height() - $(d.target).outerHeight();
+            }
+        }
+        $(function () {
+            $('.dragitem').draggable({
+                revert: true,
+                deltaX: 10,
+                deltaY: 10,
+                proxy: function (source) {
+                    var n = $('<div class="proxy"></div>');
+                    n.html($(source).html()).appendTo('body');
+                    return n;
+                }
+            });
+
+            var indicator = $('<div class="indicator">>></div>').appendTo('body');
+            $('.drag-item').draggable({
+                revert: true,
+                deltaX: 0,
+                deltaY: 0
+            }).droppable({
+                onDragOver: function (e, source) {
+                    indicator.css({
+                        display: 'block',
+                        left: $(this).offset().left - 10,
+                        top: $(this).offset().top + $(this).outerHeight() - 5
+                    });
+                },
+                onDragLeave: function (e, source) {
+                    indicator.hide();
+                },
+                onDrop: function (e, source) {
+                    $(source).insertAfter(this);
+                    indicator.hide();
+                }
+            });
+        });
+    </script>
+
+}
+

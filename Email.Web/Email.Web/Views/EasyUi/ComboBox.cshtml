@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewBag.Title = "ComboBox";
+}
+
+<div style="margin-bottom:20px;padding:10px;border:1px solid blue">
+    <div style="margin:20px 0;">
+        <a href="javascript:void(0)" class="easyui-linkbutton" onclick="setvalue()">SetValue</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" onclick="alert($('#state').combobox('getValue'))">GetValue</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#state').combobox('disable')">Disable</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#state').combobox('enable')">Enable</a>
+    </div>
+    <select class="easyui-combobox" name="state" label="State:" labelPosition="top" style="width:100%;">
+        <option value="AL">Alabama</option>
+        <option value="AK">Alaska</option>
+        <option value="AZ">Arizona</option>
+        <option value="OH" selected>Ohio</option>
+        <option value="OK">Oklahoma</option>
+        <option value="OR">Oregon</option>
+        <option value="PA">Pennsylvania</option>
+        <option value="RI">Rhode Island</option>
+        <option value="SC">South Carolina</option>
+        <option value="SD">South Dakota</option>
+        <option value="TN">Tennessee</option>
+    </select>
+</div>
+<div style="margin-bottom:20px;padding:10px;border:1px solid blue">
+    <p>自定义样式</p>
+    <div style="margin:20px 0;">
+        <a  class="easyui-linkbutton" onclick="LoadData()">LoadData</a>
+    </div>
+    <input id="language" class="easyui-combobox" name="language" style="width:100%;" data-options=
+           "url: '/EasyUi/ComboData' ,
+           method: 'get' ,
+           valueField: 'id' ,
+           textField: 'text' ,
+           groupField:'group',
+           panelWidth: 350,
+           panelHeight: 'auto' ,
+           formatter: formatItem,
+           iconWidth:22,
+		  icons:[{
+						iconCls:'icon-add'
+					},{
+						iconCls:'icon-cut'
+					}],
+
+           label: 'Language:' ,
+           labelPosition: 'top'
+           ">
+</div>
+<div style="margin-bottom:20px;padding:10px;border:1px solid blue">
+    <input class="easyui-combobox" style="width:100%;" multiline="true"  data-options=
+           "showItemIcon: false,
+           data: [
+           {value:'add',text:'Add',iconCls:'icon-add'},
+           {value:'del',text:'Delete',iconCls:'icon-remove'},
+           {value:'save',text:'Save',iconCls:'icon-save',selected:true},
+           {value:'cancel',text:'Cancel',iconCls:'icon-cancel'},
+           {value:'undo',text:'Undo',iconCls:'icon-undo'},
+           {value:'redo',text:'Redo',iconCls:'icon-redo'}
+           ],
+           editable: false,
+           multiple:true,
+           panelHeight: 'auto' ,
+           label: 'Perform Action:' ,
+           labelPosition: 'top'
+           ">
+</div>
+<div style="margin:20px;padding:10px;border:1px solid blue;float:left">
+    <ul class="easyui-datalist" title="Basic DataList" lines="true" style="width:400px;height:250px">
+        <li value="AL">Alabama</li>
+        <li value="AK">Alaska</li>
+        <li value="AZ">Arizona</li>
+        <li value="AR">Arkansas</li>
+        <li value="CA">California</li>
+        <li value="CO">Colorado</li>
+    </ul>
+</div>
+<div style="margin:20px;padding:10px;border:1px solid blue;float:left">
+    <div class="easyui-datalist" title="Checkbox in DataList" style="width:400px;height:250px" data-options=
+         "url: '/EasyUi/ListData' ,
+         method: 'get' ,
+         checkbox: true,
+         groupField: 'group',
+         selectOnCheck: false,
+         onBeforeSelect: function(){return false;}
+         ">
+    </div>
+</div>
+
+@section scripts{
+   <script type="text/javascript">
+
+		function setvalue(){
+			$.messager.prompt('SetValue','Please input the value(CO,NV,UT,etc):',function(v){
+				if (v){
+					$('#state').combobox('setValue',v);
+				}
+			});
+		}
+		function formatItem(row) {
+		    var s = '<span style="font-weight:bold">' + row.text + '</span><br/>' +
+					'<span style="color:#888">' + row.desc + '</span>';
+		    return s;
+		}
+
+		function LoadData() {
+		  
+		    $('#language').combobox('reload', '/EasyUi/ComboData');
+		}
+   </script>      
+}

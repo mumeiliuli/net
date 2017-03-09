@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Toastr";
+}
+<link href="~/Content/lib/toastr.css" rel="stylesheet" />
+<button id="test">Toastr</button>
+<form id="form">
+    <input type="text"/><br/>
+    <input type="text" /><br />
+</form>
+@section scripts{
+    
+<script src="~/Scripts/lib/toastr/toastr.js"></script>
+<script src="~/Scripts/lib/toastr/spin.js"></script>
+<script src="~/Scripts/lib/toastr/jquery.spin.js"></script>
+<script src="~/Scripts/lib/toastr/jquery.blockUI.js"></script>
+    <script>
+        $("#test").click(function () {
+            $("#form").block({ message: null ,css: { backgroundColor: '#cff0'}});
+            //$("#test").spin(false);
+            //$.blockUI({ css: { backgroundColor: '#f00', color: '#fff' } });
+            //toastr.options.rtl = true;
+            //toastr.info("info", "title", { timeOut: 1000, positionClass: "toast-top-left" }); //停留1秒
+            //$.unblockUI();
+
+        });
+        //$("#test").spin('small','#f00');
+    </script>
+
+}
+

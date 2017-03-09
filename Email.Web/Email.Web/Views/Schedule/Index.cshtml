@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "日程";
+}
+@Html.RenderCss("Scripts/lib/calendar/fullcalendar.css", "Scripts/lib/colorpicker/css/colorpicker.css", "Content/main/calendar.css")
+<div id="calendar"></div>
+<div id="dlg" class="easyui-dialog" style="width:400px;height:380px;padding:10px 20px"
+     closed="true" buttons="#dlg-buttons">
+    <div class="ftitle">日程</div>
+    <form id="fm" method="post">
+        <input name="Id" type="hidden">
+        <div class="fitem">
+            <label>日程内容:</label>
+            <input name="Title" class="easyui-textbox" required multiline="true">
+        </div>
+        <div class="fitem">
+            <label>开始时间:</label>
+            <input name="StartTime" class="easyui-datetimebox" required data-options="formatter:myformatter,parser:myparser" readonly="readonly">
+        </div>
+        <div class="fitem">
+            <label>结束时间:</label>
+            <input name="EndTime" class="easyui-datetimebox" required data-options="formatter:myformatter,parser:myparser">
+        </div>
+        <div class="fitem">
+            <label>背景颜色:</label>
+            <input name="Color" id="colorpicker" type="text" maxlength="7" size="7" >
+        </div>
+        <div class="fitem">
+            <span class="error"></span>
+        </div>
+    </form>
+</div>
+<div id="dlg-buttons">
+    <button class="easyui-linkbutton" iconCls="icon-ok" id="save">保存</button>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
+</div>
+
+<!-- end 修改日程窗口 -->
+@section scripts{
+    @Html.RenderJs("Scripts/lib/calendar/moment.js", "Scripts/lib/calendar/fullcalendar.js", "Scripts/lib/calendar/locale/zh-cn.js")
+    @Html.RenderJs("Scripts/lib/colorpicker/js/colorpicker.js", "Scripts/lib/colorpicker/js/eye.js", "Scripts/lib/colorpicker/js/utils.js")
+    @Html.RenderJs("Scripts/main/schedule.js")
+ }

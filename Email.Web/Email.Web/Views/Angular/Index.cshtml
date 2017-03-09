@@ -1,0 +1,26 @@
+﻿
+
+@{
+    ViewBag.Title = "angular";
+}
+
+<div ng-app="myApp" >
+    <div id="sendmsg" ng-controller="chat">
+        
+        <input type="text" ng-model="name">
+       <h2>{{ name|number:2 }}</h2>
+        <h2>{{ clock|date:'yyyy-MM-dd HH:mm:ss'}}</h2>
+        <ul style="border:1px solid red;width:200px;">
+            <li ng-repeat="n in users | orderBy:'name'">
+                {{n.name+"  "+n.nick}}
+            </li>
+        </ul>
+       
+    </div>
+    
+</div>
+@section scripts{
+    <script src="~/Scripts/lib/angular/angular.js"></script>
+    @Html.RenderJs("Scripts/main/angular_test.js")
+}
+

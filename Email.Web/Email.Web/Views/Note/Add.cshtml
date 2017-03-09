@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "日志";
+}
+
+@Html.RenderCss("Scripts/lib/kindeditor/themes/default/default.css", "Scripts/lib/kindeditor/plugins/code/prettify.css")
+<form id="notef" method="post" style="width:750px;">
+    <textarea id="note" name="Content" style="width:100%; height:400px;"></textarea>
+    <p style="width:100%;padding:10px;text-align:right">
+        <input type="button" value="保存" class="btn btn-info" id="save"/>
+    </p>
+    
+</form>
+
+@section scripts{
+    
+@Html.RenderJs("Scripts/lib/kindeditor/kindeditor-all.js", "Scripts/lib/kindeditor/lang/zh-CN.js", "Scripts/lib/kindeditor/plugins/code/prettify.js")
+@Html.RenderJs("Scripts/main/note.js")
+}

@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Calendar";
+}
+<style scoped="scoped">
+    .md {
+        height: 16px;
+        line-height: 16px;
+        background-position: 2px center;
+        text-align: right;
+        font-weight: bold;
+        padding: 0 2px;
+        color: red;
+    }
+    .easyui-calendar{
+        width:250px;height:250px;
+        margin-left:15px;
+        float:left;
+    }
+</style>
+
+<div class="easyui-calendar" ></div>
+<div class="easyui-calendar" data-options="formatter:formatDay"></div>
+<!--第一天显示星期几-->
+<div>
+    <div style="margin:20px 15px">
+        <select onchange="$('#cc').calendar({firstDay:this.value})">
+            <option value="0">Sunday</option>
+            <option value="1">Monday</option>
+            <option value="2">Tuesday</option>
+            <option value="3">Wednesday</option>
+            <option value="4">Thursday</option>
+            <option value="5">Friday</option>
+            <option value="6">Saturday</option>
+        </select>
+    </div>
+
+    <div id="cc" class="easyui-calendar" style="width:250px;height:250px;"></div>
+</div>
+
+@section scripts{
+
+    <script>
+        var d1 = Math.floor((Math.random() * 30) + 1);
+        var d2 = Math.floor((Math.random() * 30) + 1);
+        function formatDay(date) {
+            var m = date.getMonth() + 1;
+            var d = date.getDate();
+            var opts = $(this).calendar('options');
+            if (opts.month == m && d == d1) {
+                return '<div class="icon-ok md">' + d + '</div>';
+            } else if (opts.month == m && d == d2) {
+                return '<div class="icon-search md">' + d + '</div>';
+            }
+            return d;
+        }
+    </script>
+}
+

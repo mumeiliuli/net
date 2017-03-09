@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "在线聊天";
+}
+@Html.RenderCss("Content/main/chat.css")
+<div ng-app="myApp" ng-controller="chat" class="chat">
+    <div id="content"></div>
+    <div id="sendmsg">
+        <div class="message">
+            <textarea ng-model="message"></textarea>
+        </div>
+        <button class="btn btn-info send" ng-click="send()"> 发送</button>
+    </div>
+</div>
+@section scripts{
+<script src="~/Scripts/lib/angular/angular.js"></script>
+@Html.RenderJs("Scripts/main/chat.js")
+}
+

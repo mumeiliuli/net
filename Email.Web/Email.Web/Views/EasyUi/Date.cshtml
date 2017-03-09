@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "日期";
+}
+
+<div class="easyui-panel" style="width:100%;max-width:400px;padding:30px 60px;">
+    <div style="margin-bottom:20px">
+        <input class="easyui-datebox" label="日期:" labelPosition="top" style="width:100%;">
+    </div>
+    <div style="margin-bottom:20px">
+        <input class="easyui-datebox" label="Date With 3 Buttons:" labelPosition="top" data-options="buttons:buttons" style="width:100%;">
+    </div>
+    <div style="margin-bottom:20px">
+        <input class="easyui-datebox" label="自定义格式:" labelPosition="top" data-options="formatter:myformatter,parser:myparser" style="width:100%;">
+    </div>
+    <div style="margin-bottom:20px">
+        <input id="dd" label="选择限定日期:" labelPosition="top" style="width:100%;">
+    </div>
+    <div style="margin-bottom:20px">
+        <input class="easyui-datebox" label="日期验证:" labelPosition="top" required data-options="validType:'md[\'10/11/2015\']'" style="width:100%;">
+    </div>
+</div>
+<div class="easyui-panel" style="width:100%;max-width:400px;padding:30px 60px;">
+    <div style="margin-bottom:20px">
+        <input class="easyui-datetimebox" label="时间:" labelPosition="top" style="width:100%;">
+    </div>
+    <div style="margin-bottom:20px">
+        <input class="easyui-datetimespinner" label="Start Time:" labelPosition="top" value="6/24/2015 17:23" style="width:100%;">
+    </div>
+</div>
+@section scripts{
+
+    <script>
+        var buttons = $.extend([], $.fn.datebox.defaults.buttons);
+        buttons.splice(1, 0, {
+            text: 'MyBtn',
+            handler: function (target) {
+                alert('click MyBtn');
+            }
+        });
+        function myformatter(date) {
+            var y = date.getFullYear();
+            var m = date.getMonth() + 1;
+            var d = date.getDate();
+            return y + '-' + (m < 10 ? ('0' + m) : m) + '-' + (d < 10 ? ('0' + d) : d);
+        }
+        function myparser(s) {
+            if (!s) return new Date();
+            var ss = (s.split('-'));
+            var y = parseInt(ss[0], 10);
+            var m = parseInt(ss[1], 10);
+            var d = parseInt(ss[2], 10);
+            if (!isNaN(y) && !isNaN(m) && !isNaN(d)) {
+                return new Date(y, m - 1, d);
+            } else {
+                return new Date();
+            }
+        }
+        $(function () {
+            $('#dd').datebox().datebox('calendar').calendar({
+                validator: function (date) {
+                    var now = new Date();
+                    var d1 = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+                    var d2 = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 10);
+                    return d1 <= date && date <= d2;
+                }
+            });
+        });
+        $.extend($.fn.validatebox.defaults.rules, {
+            md: {
+                validator: function (value, param) {
+                    var d1 = $.fn.datebox.defaults.parser(param[0]);
+                    var d2 = $.fn.datebox.defaults.parser(value);
+                    return d2 <= d1;
+                },
+                message: 'The date must be less than or equals to {0}.'
+            }
+        })
+    </script>
+
+}
+

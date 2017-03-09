@@ -1,0 +1,54 @@
+﻿body,p,div,ul,li,tr td {
+    margin:0;
+    padding:0;
+}
+a,a:visited{
+    outline:none;
+}
+ul li{
+    list-style:none;
+}
+.header{
+    background-color:#E0ECFF;
+    width:100%;
+}
+.user_right{
+    margin-right:40px;
+    margin-top:20px;
+    float:right;
+    color:white;
+}
+.content_left{
+    float:left;
+}
+.content_right{
+    float:left;
+    padding:20px;
+}
+.content_left .panel-with-icon{
+    padding-left:30px;
+}
+ul.nav li a{
+    text-align:center;
+}
+.ftitle{
+    padding-bottom:5px;
+    border-bottom:1px solid #cbbcbc;
+    font-size:14px;
+    color:#666666;
+}
+.fitem{
+    margin-left:15px;
+    margin-top:10px;
+}
+.fitem label{
+    margin-right:10px;
+    text-align:left;
+}
+.fitem input{
+    min-width:200px;
+}
+.fitem .error{
+    color:red;
+    display:none;
+}
