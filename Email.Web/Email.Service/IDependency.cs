@@ -8,5 +8,6 @@ namespace Email.Service
 {
     public interface IDependency
     {
+        
     }
 }

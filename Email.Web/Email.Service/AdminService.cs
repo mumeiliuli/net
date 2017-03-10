@@ -7,19 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Emaill.Model.ViewModels;
+using ServiceStack.Redis;
 
 namespace Email.Service
 {
-    public class AdminService: IAdminService
+    public partial class AdminService : IAdminService
     {
         private EmailDbContext _db;
+        private RedisClient client;
         public static readonly string PICURL = "http://localhost:4797/";
+        static readonly string RedisIP = "127.0.0.1";
+        static readonly int RedisPort = 6379;
+
 
         public AdminService()
         {
             _db = new EmailDbContext();
+            client = new RedisClient(RedisIP, RedisPort);
         }
-        
+
         public string GenerateId
         {
             get
@@ -28,7 +34,7 @@ namespace Email.Service
             }
         }
         #region 用户
-        public AccountUser CheckUser(string account,string password)
+        public AccountUser CheckUser(string account, string password)
         {
             AccountUser user = _db.AccountUsers.Where(t => t.Account == account).FirstOrDefault();
             if (user == null)
@@ -68,38 +74,38 @@ namespace Email.Service
         public bool UpdateUser(AccountUser user)
         {
             _db.Entry(user).State = System.Data.Entity.EntityState.Modified;
-            return _db.SaveChanges()>0;
-            
+            return _db.SaveChanges() > 0;
+
         }
 
         public bool DeleteUser(string id)
         {
-            var user=GetUserByID(id);
+            var user = GetUserByID(id);
             _db.AccountUsers.Remove(user);
-           return  _db.SaveChanges()>0;
+            return _db.SaveChanges() > 0;
         }
         #endregion
 
         #region 图片
-        public void AddImg(string name,string userId, string[] urls)
+        public void AddImg(string name, string userId, string[] urls)
         {
             DateTime dt = DateTime.Now;
-            var album=_db.Albums.FirstOrDefault(t => t.UserId == userId && t.Name == name);
+            var album = _db.Albums.FirstOrDefault(t => t.UserId == userId && t.Name == name);
             if (album == null)
             {
                 album = new Album()
                 {
                     Id = GenerateId,
-                    UserId=userId,
-                    Name=name,
-                    IsOpen=true,
-                    CreateTime=dt
+                    UserId = userId,
+                    Name = name,
+                    IsOpen = true,
+                    CreateTime = dt
                 };
                 _db.Albums.Add(album);
                 _db.SaveChanges();
-                
+
             }
-            foreach(var u in urls)
+            foreach (var u in urls)
             {
                 Pictures p = new Pictures
                 {
@@ -116,15 +122,15 @@ namespace Email.Service
         public List<AlbumView> GetAlbumList(string userid)
         {
             List<AlbumView> albums = new List<AlbumView>();
-            var pics= _db.Pictures.Where(t => t.Album.UserId == userid).GroupBy(t => t.Album.Name);
-            foreach(var p in pics)
+            var pics = _db.Pictures.Where(t => t.Album.UserId == userid).GroupBy(t => t.Album.Name);
+            foreach (var p in pics)
             {
-                var item=p.OrderByDescending(t => t.UploadTime).FirstOrDefault();
+                var item = p.OrderByDescending(t => t.UploadTime).FirstOrDefault();
                 AlbumView album = new AlbumView
                 {
                     Id = item.AlbumId,
                     Name = p.Key,
-                    LastImg = PICURL+ item.Url
+                    LastImg = PICURL + item.Url
                 };
                 albums.Add(album);
             }

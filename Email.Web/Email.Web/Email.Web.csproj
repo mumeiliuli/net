@@ -213,11 +213,14 @@
     <Compile Include="Controllers\AngularController.cs" />
     <Compile Include="Controllers\ChatController.cs" />
     <Compile Include="Controllers\EasyUiController.cs" />
+    <Compile Include="Controllers\LifeStyleController.cs" />
+    <Compile Include="Controllers\MoneyController.cs" />
     <Compile Include="Controllers\NoteController.cs" />
     <Compile Include="Controllers\PicController.cs" />
     <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\WxPayController.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -237,6 +240,7 @@
     <Content Include="Content\main\calendar.css" />
     <Content Include="Content\lib\toastr.css" />
     <Content Include="Content\main\chat.css" />
+    <Content Include="Content\main\life.css" />
     <Content Include="Scripts\jquery-ui\AUTHORS.txt" />
     <Content Include="Scripts\jquery-ui\external\jquery\jquery.js" />
     <Content Include="Scripts\jquery-ui\images\ui-icons_444444_256x240.png" />
@@ -256,6 +260,11 @@
     <Content Include="Scripts\jquery-ui\jquery-ui.theme.min.css" />
     <Content Include="Scripts\jquery-ui\LICENSE.txt" />
     <Content Include="Scripts\lib\angular\angular.js" />
+    <Content Include="Scripts\lib\emoj\emojionearea.css" />
+    <Content Include="Scripts\lib\emoj\emojionearea.js" />
+    <Content Include="Scripts\lib\emoj\font-awesome.min.css" />
+    <Content Include="Scripts\lib\emoj\normalize.min.css" />
+    <Content Include="Scripts\lib\emoj\tomorrow.css" />
     <Content Include="Scripts\lib\jquery.signalR-2.2.1.js" />
     <Content Include="Scripts\lib\calendar\fullcalendar.css" />
     <Content Include="Scripts\lib\calendar\fullcalendar.js" />
@@ -961,6 +970,7 @@
     <Content Include="Scripts\lib\toastr\spin.js" />
     <Content Include="Scripts\main\angular_test.js" />
     <Content Include="Scripts\main\home_index.js" />
+    <Content Include="Scripts\main\life.js" />
     <Content Include="Scripts\main\login.js" />
     <Content Include="Scripts\main\note.js" />
     <Content Include="Scripts\main\pic.js" />
@@ -1016,6 +1026,10 @@
     <Content Include="Views\EasyUi\ComboBox.cshtml" />
     <Content Include="Views\EasyUi\Date.cshtml" />
     <Content Include="Views\EasyUi\Draggable.cshtml" />
+    <Content Include="Views\Money\Index.cshtml" />
+    <Content Include="Views\WxPay\Index.cshtml" />
+    <Content Include="Views\EasyUi\TextBox.cshtml" />
+    <Content Include="Views\LifeStyle\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Email.International\Email.International.csproj">

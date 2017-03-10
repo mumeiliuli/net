@@ -11,7 +11,7 @@ namespace Email.Util.File
 {
     public class MapHelper<TSource, TDestination>
     {
-        static MapHelper()
+         static  MapHelper()
         {
             Mapper.Initialize(cfg => cfg.CreateMap<TSource, TDestination>());
         }

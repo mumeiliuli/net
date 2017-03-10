@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "我的生活圈";
+}
+<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans:400,700'>
+<link rel="stylesheet" type="text/css" href="~/Scripts/lib/emoj/normalize.min.css">
+@Html.RenderCss("Content/main/life.css")
+<link href="~/Scripts/lib/emoj/emojionearea.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="~/Scripts/lib/emoj/font-awesome.min.css" >
+<link rel="stylesheet" type="text/css" href="~/Scripts/lib/emoj/tomorrow.css" >
+<div class="comment_header">
+    <textarea class="txt_content"></textarea>
+    <button class="easyui-linkbutton send" id="sendr">发表</button>
+</div>
+<div id="comment">
+    <div class="comment_item" data-id="111">
+        <div class="m10"><span class="name">刘丽梅</span><span class="time">12:00</span></div>
+        <p class="m10 comment_content m10">你的送啊开发多个那得看你！</p>
+        <div class="count"><button class="m10 easyui-linkbutton">评论(<span>5</span>)</button><button class="easyui-linkbutton">赞(<span>5</span>)</button></div>
+    </div>
+</div>
+<script type="text/html" id="list_tmpl">
+    {{each datas}}
+    <div class="comment_item" data-id="${Id}">
+        <div class="m10"><span class="name">${UserName}</span><span class="time">${TimeStr}</span></div>
+        <p class="m10 comment_content m10">${Content}</p>
+        <div class="count"><button class="m10">评论(<span>${ClickCount}</span>)</button><button class="zan">赞(<span class="like">${LikeCount}</span>)</button></div>
+        <textarea class="comment_txt"></textarea>
+        <button class="easyui-linkbutton send">发表</button>
+    </div>
+    {{/each}}
+</script>
+
+@section scripts{
+      <script src="~/Scripts/lib/jquery/jquery.tmpl.js"></script>
+      <script src="~/Scripts/lib/emoj/emojionearea.js"></script>
+      @Html.RenderJs("Scripts/main/life.js")
+}
+

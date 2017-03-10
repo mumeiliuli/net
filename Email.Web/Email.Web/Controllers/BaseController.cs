@@ -1,6 +1,7 @@
 ﻿using Email.Service;
 using Email.Util.File;
 using Email.Util.Front;
+using Email.Util.security;
 using Emaill.Model;
 using System;
 using System.Collections.Generic;
@@ -13,24 +14,49 @@ namespace Email.Web.Controllers
 {
     public class BaseController : Controller
     {
+        private AdminService _service;
+        private Token _user;
 
+        public AdminService Service
+        {
+            get
+            {
+                if (_service == null)
+                {
+                    _service = new AdminService();
+                }
+                return _service;
+            }
+        }
+        public Token MyUser
+        {
+            get
+            {
+                if (_user == null)
+                {
+                    _user = AuthService.User;
+                }
+                return _user;
+            }
+        }
         public string UserId
         {
             get
             {
-                if (User.Identity.IsAuthenticated)
-                {
-                   var user= AuthService.User;
-                    if (user != null)
-                    {
-                        return user.UserId;
-                    }
-                }
-                return string.Empty;
+               
+                return MyUser.UserId;
+            }
+        }
+        public string UserName
+        {
+            get
+            {
+
+                return MyUser.Account;
             }
         }
 
-       
+
 
         public ActionResult JsonOK(object data, string message = "", string code = "", bool result = true)
         {

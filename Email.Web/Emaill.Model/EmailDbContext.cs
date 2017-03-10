@@ -17,5 +17,14 @@ namespace Emaill.Model
         public DbSet<Album> Albums { get; set; }
         public DbSet<Pictures> Pictures { get; set; }
         public DbSet<Schedule> Schedules { get; set; }
+        public DbSet<LifeRecord> LifeRecords { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<RecordLike> RecordLikes { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<RecordLike>().HasKey(t => new { t.CommentUserId, t.RecordId });
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

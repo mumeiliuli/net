@@ -53,5 +53,10 @@ namespace Email.Web.Controllers
             return View();
         }
 
+        public ActionResult TextBox()
+        {
+            return View();
+        }
+
     }
 }

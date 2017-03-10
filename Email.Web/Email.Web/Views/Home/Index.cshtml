@@ -1,49 +1,8 @@
-﻿@model Email.Web.Models.Suggestion
-@{
-    ViewBag.Title = "Home Page";
+﻿@{
+    ViewBag.Title = "主页";
 }
+<h3>我的圈</h3>
 
-<div class="row">
-    <div class="col-md-4">
-
-        @using (Html.BeginForm("ChangeCulture", "Home"))
-        {
-            <p>
-                @Html.DropDownList("ddlCulture", 
-                   new SelectList(new[]{new {value="zh-cn",text= "中文"}, new{value="en-us",text= "英文"} }, "value", "text", Session["CurrentCulture"]), 
-                   new { onchange = "this.form.submit();" })
-            </p>
-        }
-    </div>
-</div>
-<div class="row">
-    
-    <div class="col-md-4">
-       @using (Html.BeginForm("Index", "Home"))
-       {
-
-        <div class="form-horizontal">
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="@I("Save")" class="btn btn-default" />
-                </div>
-            </div>
-        </div>
-       }
-    </div>
-    
-</div>
 @section scripts{
     
 }

@@ -36,8 +36,7 @@ namespace Email.Web.Controllers
         
         public ActionResult Index()
         {
-            Suggestion model = new Suggestion();
-            return View(model);
+            return View();
         }
 
         public ActionResult Error()

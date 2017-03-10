@@ -1,4 +1,5 @@
-﻿using ServiceStack.Redis;
+﻿using Email.Service;
+using ServiceStack.Redis;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,13 +22,7 @@ namespace Email.Web
             AutoFacConfig.RegisterServce();
             log4net.Config.XmlConfigurator.Configure(new FileInfo(Server.MapPath("~/log4net.config")));
 
-            var clientsManager = new RedisManagerPool("123@localhost:6379");
-            var redisPubSub = new RedisPubSubServer(clientsManager, "redischat")
-            {
-                OnMessage = (channel, message) => {
-                    string mymsg = channel + "," + message;
-                }
-            }.Start();
+            new AdminService().UpdateLike();
         }
     }
 }
