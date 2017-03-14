@@ -1,49 +1,50 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - 秘密花园</title>
-    @Html.RenderCss("Content/lib/easyui/default/easyui.css", "Content/lib/easyui/icon.css", "Content/lib/bootstrap/bootstrap.css")
+    @Html.RenderCss("Content/lib/easyui/default/easyui.css", "Content/lib/easyui/color.css", "Content/lib/easyui/icon.css", "Content/lib/bootstrap/bootstrap.css")
     @Html.RenderCss("Content/main/base.css")
-</head>
-<body>
-    @Html.Partial("_Header")
-    <div class="content">
-        <div class="content_left">
-            <div class="easyui-accordion" style="width:200px;">
-                <div title="我的空间" iconCls="icon-edit">
-                    <ul class="easyui-datalist" lines="true">
-                        <li class="active"><a href="/Pic/Index">相册</a></li>
-                        <li><a href="/User/Index">用户</a></li>
-                        <li><a href="/Schedule/Index">日程</a></li>
-                    </ul>
-                </div>
-                <div title="我的主页" iconCls="icon-man" selected="true">
-                    <ul class="easyui-datalist" lines="true">
-                        <li><a href="/LifeStyle/Index">心情日记</a></li>
-                        <li>小说</li>
-                    </ul>
-                </div>
-                <div title="EasyUI" iconCls="icon-edit">
-                    <ul class="easyui-datalist" lines="true">
-                        <li><a href="/EasyUi/Accordion">折叠板</a></li>
-                        <li><a href="/EasyUi/Calendar">日历</a></li>
-                        <li><a href="/EasyUi/ComboBox">下拉框</a></li>
-                        <li><a href="/EasyUi/Date">日期</a></li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-        <div class="content_right">
-            @RenderBody()
-        </div>
-
-        
-    </div>
     @Html.RenderJs("Scripts/lib/jquery/jquery.js", "Scripts/lib/jquery/jquery.easyui.min.js", "Scripts/lib/bootstrap.js", "Scripts/lib/jquery/jquery.tmpl.js")
+</head>
+<body class="easyui-layout">
+    <div data-options="region:'north',border:false" style="height:60px;">
+        @Html.Partial("_Header")
+    </div>
+    <div class="content_left" data-options="region:'west',border:false" title="目录">
+        <div class="easyui-accordion" style="width:200px;" data-options="border:false">
+            <div title="我的空间" iconCls="icon-edit">
+                <ul class="easyui-datalist" lines="true">
+                    <li class="active"><a href="/Pic/Index">相册</a></li>
+                    <li><a href="/User/Index">用户</a></li>
+                    <li><a href="/Schedule/Index">日程</a></li>
+                </ul>
+            </div>
+            <div title="我的主页" iconCls="icon-man" selected="true">
+                <ul class="easyui-datalist" lines="true">
+                    <li><a href="/LifeStyle/Index">心情日记</a></li>
+                    <li>小说</li>
+                </ul>
+            </div>
+            <div title="EasyUI" iconCls="icon-edit">
+                <ul class="easyui-datalist" lines="true">
+                    <li><a href="/EasyUi/Accordion">折叠板</a></li>
+                    <li><a href="/EasyUi/Calendar">日历</a></li>
+                    <li><a href="/EasyUi/ComboBox">下拉框</a></li>
+                    <li><a href="/EasyUi/Date">日期</a></li>
+                    <li><a href="/EasyUi/Form">Form</a></li>
+                    <li><a href="/EasyUi/Layout">布局</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="content_right" data-options="region:'center'">
+        @RenderBody()
+    </div>
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

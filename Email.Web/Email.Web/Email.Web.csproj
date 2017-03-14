@@ -1030,6 +1030,9 @@
     <Content Include="Views\WxPay\Index.cshtml" />
     <Content Include="Views\EasyUi\TextBox.cshtml" />
     <Content Include="Views\LifeStyle\Index.cshtml" />
+    <Content Include="Views\EasyUi\Form.cshtml" />
+    <Content Include="Views\EasyUi\Layout.cshtml" />
+    <Content Include="Views\EasyUi\LinkButton.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Email.International\Email.International.csproj">

@@ -13,20 +13,29 @@
     <button class="easyui-linkbutton send" id="sendr">发表</button>
 </div>
 <div id="comment">
-    <div class="comment_item" data-id="111">
-        <div class="m10"><span class="name">刘丽梅</span><span class="time">12:00</span></div>
-        <p class="m10 comment_content m10">你的送啊开发多个那得看你！</p>
-        <div class="count"><button class="m10 easyui-linkbutton">评论(<span>5</span>)</button><button class="easyui-linkbutton">赞(<span>5</span>)</button></div>
-    </div>
+</div>
+<div class="mycomment" data-id="">
+    <textarea class="comment_txt"></textarea>
+    <button class="easyui-linkbutton send" id="sendc">评论</button>
 </div>
 <script type="text/html" id="list_tmpl">
     {{each datas}}
     <div class="comment_item" data-id="${Id}">
         <div class="m10"><span class="name">${UserName}</span><span class="time">${TimeStr}</span></div>
-        <p class="m10 comment_content m10">${Content}</p>
-        <div class="count"><button class="m10">评论(<span>${ClickCount}</span>)</button><button class="zan">赞(<span class="like">${LikeCount}</span>)</button></div>
-        <textarea class="comment_txt"></textarea>
-        <button class="easyui-linkbutton send">发表</button>
+        <p class="m10 comment_content">${Content}</p>
+        <div class="count"><button class="m10 btnP">评论(<span class="count_p">${ClickCount}</span>)</button>
+        <button class="zan {{if IsLike}} dz {{/if}} ">赞(<span class="like">${LikeCount}</span>)</button></div>
+        <div class="comment_list">
+         
+        </div>
+        
+    </div>
+    {{/each}}
+</script>
+<script type="text/html" id="comment_tmpl">
+    {{each datas}}
+    <div class="comment_i" data-id="bb">
+        <div class="m10"><span class="name">${UserName}(<span class="time">${TimeStr}</span>)：</span><span class="comment_content">${Content}</span></div>
     </div>
     {{/each}}
 </script>

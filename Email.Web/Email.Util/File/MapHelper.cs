@@ -11,12 +11,12 @@ namespace Email.Util.File
 {
     public class MapHelper<TSource, TDestination>
     {
-         static  MapHelper()
+         public  MapHelper()
         {
             Mapper.Initialize(cfg => cfg.CreateMap<TSource, TDestination>());
         }
 
-        public static List<TDestination> AutoMapList(List<TSource> resources)
+        public  List<TDestination> AutoMapList(List<TSource> resources)
         {
             List<TDestination> list = new List<TDestination>();
             foreach(var r in resources)
@@ -28,7 +28,7 @@ namespace Email.Util.File
         }
 
 
-        public static TDestination AutoMap(object resource)
+        public  TDestination AutoMap(object resource)
         {
             
             return Mapper.Map<TDestination>(resource);

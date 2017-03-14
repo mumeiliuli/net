@@ -31,7 +31,7 @@ namespace Email.Web.Controllers
         public ActionResult GetList()
         {
             var list=_service.GetUserList();
-            var models=MapHelper<AccountUser, UserModel>.AutoMapList(list);
+            var models=new MapHelper<AccountUser, UserModel>().AutoMapList(list);
             return JsonList(models,models.Count);
         }
         [HttpPost]

@@ -1,35 +1,65 @@
-﻿.comment_header{
-    width:400px;
+﻿.comment_header {
+    width: 600px;
 }
-.send{
-    float:right;
-    margin:10px;
-    padding:10px 20px;
+
+.send {
+    float: right;
+    margin: 10px;
+    padding: 5px;
 }
-#comment{
-    clear:both;
-    margin-top:20px;
+
+#comment {
+    clear: both;
+    margin-top: 20px;
 }
-.comment_item{
-    padding:10px 0;
-    margin-top:10px;
-    border-radius:5px;
-    background-color:#cedbde;
+
+.comment_item {
+    padding: 10px 0;
+    margin-top: 40px;
+    border-radius: 5px;
+    background-color: #cedbde;
 }
-.comment_item .m10{
-    margin:10px 10px;
-}
-.comment_item .name{
-    font-size:16px;
-    margin-right:15px;
-}
-.comment_item .time{
-    font-size:12px;
-    color:#808080;
-    
-}
+
+    .comment_item .m10 {
+        margin: 10px 10px;
+    }
+
+    .comment_item .name {
+        font-size: 16px;
+        margin-right: 15px;
+    }
+
+    .comment_item .time {
+        font-size: 12px;
+        color: #808080;
+    }
+
     .comment_item .count {
         background-color: #f2e9e9;
-        border-bottom:1px solid #95B8E7;
-        border-top:1px solid #95B8E7;
+        border-bottom: 1px solid #95B8E7;
+        border-top: 1px solid #95B8E7;
     }
+
+
+.dz {
+    background-color: #95B8E7;
+   
+}
+
+.mycomment{
+    width:600px;
+    position:relative;
+    display:none;
+}
+.mycomment .send{
+    position:absolute;
+    bottom:2px;
+    right:2px;
+}
+.comment_i{
+    border-bottom:1px dashed #808080;
+}
+.comment_i .name{
+    color:#ff6a00;
+    font-size:14px;
+}

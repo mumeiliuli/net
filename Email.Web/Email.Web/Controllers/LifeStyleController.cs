@@ -17,7 +17,12 @@ namespace Email.Web.Controllers
         }
         public ActionResult GetRecordList()
         {
-            var list=Service.GetRecords(0);
+            var list=Service.GetRecords(0,UserId);
+            return JsonOK(list);
+        }
+        public ActionResult GetCommentList(string id)
+        {
+            var list = Service.GetCommentss(0, id);
             return JsonOK(list);
         }
         [HttpPost]
@@ -33,10 +38,23 @@ namespace Email.Web.Controllers
             return JsonOK("ok");
         }
         [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult AddComment(string content,string id)
+        {
+            Comment comment = new Comment();
+            comment.UserId = UserId;
+            comment.UserName = UserName;
+            comment.Content = content;
+            comment.ParentId = id;
+            comment.CreateTime = DateTime.Now;
+            Service.AddComment(comment);
+            return JsonOK("ok");
+        }
+        [HttpPost]
         public ActionResult ClickLike(string id)
         {
-            long  count = Service.ClickLike(id, UserId);
-            return JsonOK(new { Count=count});
+            bool  like = Service.ClickLike(id, UserId);
+            return JsonOK(new { Like= like });
         }
     }
 }

@@ -7,4 +7,3 @@ E:\study\vs\Email.Web\Email.International\obj\Debug\Email.International.csproj.G
 E:\study\vs\Email.Web\Email.International\obj\Debug\en-us\Email.International.resources.dll
 E:\study\vs\Email.Web\Email.International\obj\Debug\Email.International.dll
 E:\study\vs\Email.Web\Email.International\obj\Debug\Email.International.pdb
-E:\study\vs\Email.Web\Email.International\obj\Debug\Email.International.csprojResolveAssemblyReference.cache

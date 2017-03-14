@@ -57,6 +57,24 @@ namespace Email.Web.Controllers
         {
             return View();
         }
+        public ActionResult Form()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Form(string name,string file)
+        {
+            var ff= Request.Files[0];
+            return Json("ok");
+        }
+        public ActionResult Layout()
+        {
+            return View();
+        }
+        public ActionResult LinkButton()
+        {
+            return View();
+        }
 
     }
 }
