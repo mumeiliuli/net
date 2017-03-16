@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "进度条滑动";
+}
+<div style="margin:20px 0;">
+    <a href="#" class="easyui-linkbutton" onclick="start()">Start</a>
+</div>
+<div id="p" class="easyui-progressbar" style="width:400px;"></div>
+<div style="margin:20px 0;">
+    <input class="easyui-slider" style="width:300px" data-options="showTip:true"/>
+</div>
+@section scripts{
+    <script>
+		function start(){
+			var value = $('#p').progressbar('getValue');
+			if (value < 100){
+				value += Math.floor(Math.random() * 10);
+				$('#p').progressbar('setValue', value);
+				setTimeout(arguments.callee, 200);
+			}
+		};
+    </script>
+
+}
+

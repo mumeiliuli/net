@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "菜单";
+}
+<h3>右键点击屏幕</h3>
+<div id="log"></div>
+<div id="mm" class="easyui-menu" style="width:120px;" data-options="onClick:menuHandler">
+    <div onclick="javascript:alert('new')">New</div>
+    <div>
+        <span>Open</span>
+        <div style="width:150px;">
+            <div><b>Word</b></div>
+            <div>Excel</div>
+            <div>PowerPoint</div>
+            <div>
+                <span>自定义</span>
+                <div class="menu-content" style="text-align:left;padding:10px">
+                    <div style="font-weight:bold;font-size:14px;margin-bottom:10px">Select Your Language:</div>
+                    <ul id="tt">
+                        <li>Java</li>
+                        <li>Basic</li>
+                        <li>C++</li>
+                        <li>Fortran</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <span>Window Demos</span>
+                <div style="width:120px;">
+                    <div data-options="href:'window.html'">Window</div>
+                    <div data-options="href:'dialog.html'">Dialog</div>
+                    <div><a href="http://www.jeasyui.com" target="_blank">EasyUI</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-options="iconCls:'icon-save'">Save</div>
+    <div data-options="iconCls:'icon-print',disabled:true">Print</div>
+    <div class="menu-sep"></div>
+    <div>Exit</div>
+</div>
+
+<div style="margin:20px 0;">
+    <a href="#" class="easyui-linkbutton" onclick="$('#btn-edit').menubutton('disable')">Disable Edit</a>
+    <a href="#" class="easyui-linkbutton" onclick="$('#btn-edit').menubutton('enable')">Enable Edit</a>
+</div>
+<div class="easyui-panel" style="padding:5px;">
+    <a href="#" class="easyui-linkbutton" data-options="plain:true">Home</a>
+    <a href="#"id="btn-edit" class="easyui-menubutton" data-options="menu:'#mm1',iconCls:'icon-edit'">Edit</a>
+    <a href="#" class="easyui-menubutton" data-options="menu:'#mm3'">About</a>
+</div>
+<div id="mm1" style="width:150px;">
+    <div data-options="iconCls:'icon-undo'">Undo</div>
+    <div data-options="iconCls:'icon-redo'">Redo</div>
+    <div class="menu-sep"></div>
+    <div>Cut</div>
+    <div>Copy</div>
+    <div>Paste</div>
+    <div class="menu-sep"></div>
+    <div>
+        <span>Toolbar</span>
+        <div>
+            <div>Address</div>
+            <div>Link</div>
+            <div>Navigation Toolbar</div>
+            <div>Bookmark Toolbar</div>
+            <div class="menu-sep"></div>
+            <div>New Toolbar...</div>
+        </div>
+    </div>
+    <div data-options="iconCls:'icon-remove'">Delete</div>
+    <div>Select All</div>
+</div>
+<div id="mm3" class="menu-content" style="background:#f0f0f0;padding:10px;text-align:left">
+    <img src="http://www.jeasyui.com/images/logo1.png" style="width:150px;height:50px">
+    <p style="font-size:14px;color:#444;">Try jQuery EasyUI to build your modern, interactive, javascript applications.</p>
+</div>
+@section scripts{
+   <script>
+       function menuHandler(item) {
+           $('#log').prepend('<p>Click Item: ' + item.text + '</p>');
+       }
+		$(function(){
+			$(document).bind('contextmenu',function(e){
+				e.preventDefault();
+				$('#mm').menu('show', {
+					left: e.pageX,
+					top: e.pageY
+				});
+			});
+		});
+</script>
+}
+

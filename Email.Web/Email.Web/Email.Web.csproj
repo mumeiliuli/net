@@ -1033,6 +1033,9 @@
     <Content Include="Views\EasyUi\Form.cshtml" />
     <Content Include="Views\EasyUi\Layout.cshtml" />
     <Content Include="Views\EasyUi\LinkButton.cshtml" />
+    <Content Include="Views\EasyUi\Menu.cshtml" />
+    <Content Include="Views\EasyUi\Pagination.cshtml" />
+    <Content Include="Views\EasyUi\Slide.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Email.International\Email.International.csproj">

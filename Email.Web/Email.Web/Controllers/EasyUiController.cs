@@ -75,6 +75,18 @@ namespace Email.Web.Controllers
         {
             return View();
         }
+        public ActionResult Menu()
+        {
+            return View();
+        }
+        public ActionResult Pagination()
+        {
+            return View();
+        }
+        public ActionResult Slide()
+        {
+            return View();
+        }
 
     }
 }
