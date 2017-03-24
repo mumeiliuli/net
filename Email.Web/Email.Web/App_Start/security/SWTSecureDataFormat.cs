@@ -1,4 +1,5 @@
 ﻿using Email.Service;
+using Email.Util.security;
 using Microsoft.Owin.Security;
 using System;
 using System.Collections.Generic;
@@ -31,18 +32,19 @@ namespace Email.Web.security
         {
             try
             {
-                var token = AuthService.GetUser(protectedText);
+                Token token = new Token();
+                token.Decode(protectedText);
+                if (token == null || token.IsExpired)
+                {
+                    throw new Exception("token错误");
+                }
                 IList<Claim> claims = new List<Claim>();
                 claims.Add(new Claim(ClaimTypes.Name, token.Account));
-
                 claims.Add(new Claim("UserID", token.UserId));
-
+                claims.Add(new Claim(ClaimTypes.Role, token.RoleId.ToString()));
                 var identity = new ClaimsIdentity(claims, _authenticationType);
                 var pros = new AuthenticationProperties();
-                pros.Dictionary.Add("UserName", token.Account);
-                pros.Dictionary.Add("UserID", token.UserId);
-                pros.Dictionary.Add("Token", token.ToString());
-
+                pros.Dictionary.Add("Token", protectedText);
                 var ticket = new AuthenticationTicket(identity, pros);
                 return ticket;
             }

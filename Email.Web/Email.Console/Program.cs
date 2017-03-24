@@ -16,6 +16,7 @@ namespace Email.Console
 
         static void Main(string[] args)
         {
+            
             string str = "abcdefgh";
             var bytes=Encoding.Default.GetBytes(str);
             string hex = BitConverter.ToString(bytes);

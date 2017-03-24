@@ -759,6 +759,7 @@
     <Content Include="log4net.config" />
     <Content Include="Scripts\lib\fileinput\fileinput.js" />
     <Content Include="Scripts\lib\fileinput\locales\zh.js" />
+    <Content Include="Scripts\lib\jquery\jquery.easyui-1.4.5.js" />
     <Content Include="Scripts\lib\toastr\jquery.blockUI.js" />
     <Content Include="Scripts\lib\toastr\jquery.spin.js" />
     <Content Include="Scripts\lib\jquery\jquery.js" />
@@ -1036,6 +1037,7 @@
     <Content Include="Views\EasyUi\Menu.cshtml" />
     <Content Include="Views\EasyUi\Pagination.cshtml" />
     <Content Include="Views\EasyUi\Slide.cshtml" />
+    <Content Include="Views\Test\CacheTest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Email.International\Email.International.csproj">

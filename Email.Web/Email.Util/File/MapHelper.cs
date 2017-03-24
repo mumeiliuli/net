@@ -50,4 +50,18 @@ namespace Email.Util.File
             return Mapper.Map<ScheduleModel>(resource);
         }
     }
+    public class UserMap
+    {
+        static UserMap()
+        {
+            Mapper.Initialize(cfg => cfg.CreateMap<AccountUser, UserModel>()
+            .ForMember(dest => dest.RoleName, opt => opt.MapFrom(src => src.Role.Name))
+            );
+        }
+        public static UserModel AutoMap(AccountUser resource)
+        {
+
+            return Mapper.Map<UserModel>(resource);
+        }
+    }
 }

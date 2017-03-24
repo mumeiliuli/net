@@ -21,6 +21,7 @@
     function editUser() {
         var row = $('#dg').datagrid('getSelected');
         if (row) {
+            row.Password = "";
             $('#dlg').dialog('open').dialog('setTitle', 'Edit User');
             $('#fm').form('load', row);
         }

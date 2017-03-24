@@ -3,6 +3,7 @@ using Email.Util.File;
 using Email.Util.Front;
 using Email.Util.security;
 using Emaill.Model;
+using Emaill.Model.Models;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
@@ -15,7 +16,7 @@ namespace Email.Web.Controllers
     public class BaseController : Controller
     {
         private AdminService _service;
-        private Token _user;
+        private AccountUser _user;
 
         public AdminService Service
         {
@@ -28,13 +29,17 @@ namespace Email.Web.Controllers
                 return _service;
             }
         }
-        public Token MyUser
+        public AccountUser MyUser
         {
             get
             {
                 if (_user == null)
                 {
                     _user = AuthService.User;
+                }
+                if (_user == null)
+                {
+                    Response.RedirectToRoute(new { actionName = "Login", controllerName = "Account" });
                 }
                 return _user;
             }
@@ -44,7 +49,7 @@ namespace Email.Web.Controllers
             get
             {
                
-                return MyUser.UserId;
+                return MyUser.Id;
             }
         }
         public string UserName
@@ -52,7 +57,7 @@ namespace Email.Web.Controllers
             get
             {
 
-                return MyUser.Account;
+                return MyUser.UserName;
             }
         }
 

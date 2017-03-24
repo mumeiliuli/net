@@ -4,7 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Caching;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace Email.Web.Controllers
 {
@@ -43,16 +45,36 @@ namespace Email.Web.Controllers
 
         public ActionResult Toastr()
         {
-            EmailDbContext db = new EmailDbContext();
-            var list=db.AccountUsers.ToList();
-            db.AccountUsers.Add(new Emaill.Model.Models.AccountUser { Id = "888", UserName = "mm", Account = "mm", Password = "mm", LoginTime = DateTime.Now, CreateTime = DateTime.Now });
-            var user=db.AccountUsers.FirstOrDefault(t => t.Password == "llm");
-            user.UserName = "test";
-            if(list.Count>0)
-              db.AccountUsers.Remove(list.ElementAt(0));
-            db.SaveChanges();
+            
+            //EmailDbContext db = new EmailDbContext();
+            //var list=db.AccountUsers.ToList();
+            //db.AccountUsers.Add(new Emaill.Model.Models.AccountUser { Id = "888", UserName = "mm", Account = "mm", Password = "mm", LoginTime = DateTime.Now, CreateTime = DateTime.Now });
+            //var user=db.AccountUsers.FirstOrDefault(t => t.Password == "llm");
+            //user.UserName = "test";
+            //if(list.Count>0)
+            //  db.AccountUsers.Remove(list.ElementAt(0));
+            //db.SaveChanges();
             return View();
         }
+        public ActionResult CacheTest()
+        {
+           
+            HttpContext.Cache.Insert("test", "llm", null, Cache.NoAbsoluteExpiration, TimeSpan.FromSeconds(10), CacheItemPriority.Normal, CacheItemRemovedCallback);
+
+            //var test=Request.Params["test"];
+            //var test1=Request["test"];
+            return View();
+        }
+        private   void CacheItemRemovedCallback(string key, object value, CacheItemRemovedReason reason)
+        {
+
+            var path1 = HttpRuntime.AppDomainAppPath;
+            var  path=System.Web.HttpContext.Current.Server.MapPath("/");
+            
+        }
+
+
+
 
     }
 }

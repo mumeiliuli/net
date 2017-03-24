@@ -7,9 +7,9 @@
        toolbar="#toolbar" data-options="singleSelect:true,collapsible:false,rownumbers:true,url:'/User/GetList',method:'get'">
     <thead>
         <tr>
+            <th data-options="field:'RoleName',width:120">角色</th>
             <th data-options="field:'UserName',width:80">昵称</th>
             <th data-options="field:'Account',width:80">账号</th>
-            <th data-options="field:'Password',width:240">密码</th>
             <th data-options="field:'LoginTime',width:150">最后一次登录时间</th>
         </tr>
     </thead>
@@ -19,22 +19,25 @@
     <button  class="easyui-linkbutton" iconCls="icon-edit" plain="true" id="edit">编辑</button>
     <button  class="easyui-linkbutton" iconCls="icon-remove" plain="true" id="delete">删除</button>
 </div>
-<div id="dlg" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px"
-     closed="true" buttons="#dlg-buttons">
-    <div class="ftitle">User Information</div>
+<div id="dlg" class="easyui-dialog" style="width:400px;height:280px;padding:10px"
+     closed="true" buttons="#dlg-buttons" title="User Information">
     <form id="fm" method="post">
         <input name="Id" type="hidden">
         <div class="fitem">
-            <label>昵称:</label>
-            <input name="UserName" class="easyui-validatebox" required="true">
+            <select name="RoleId" label="角色:" class="easyui-combobox" required="true" style="width:100%">
+                <option value="1">超级管理员</option>
+                <option value="2">管理员</option>
+                <option value="3">普通用户</option>
+            </select>
         </div>
         <div class="fitem">
-            <label>帐号:</label>
-            <input name="Account" class="easyui-validatebox" required="true">
+            <input name="UserName" label="昵称:"class="easyui-textbox" required="true" style="width:100%">
         </div>
         <div class="fitem">
-            <label>密码:</label>
-            <input name="Password" class="easyui-validatebox" required="true">
+            <input name="Account" label="帐号:"  class="easyui-textbox" required="true" style="width:100%">
+        </div>
+        <div class="fitem">
+            <input name="Password" label="密码:"  class="easyui-textbox" required="true" style="width:100%">
         </div>
         <div class="fitem">
             <span class="error"></span>

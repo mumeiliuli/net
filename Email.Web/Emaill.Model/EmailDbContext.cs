@@ -13,6 +13,7 @@ namespace Emaill.Model
         public EmailDbContext(): base("Name=emailContext")
         {
         }
+        public DbSet<Role> Roles { get; set; }
         public DbSet<AccountUser> AccountUsers { get; set; }
         public DbSet<Album> Albums { get; set; }
         public DbSet<Pictures> Pictures { get; set; }

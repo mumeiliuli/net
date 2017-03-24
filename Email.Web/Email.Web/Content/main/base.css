@@ -18,7 +18,12 @@ ul li{
     margin-right:40px;
     margin-top:20px;
     float:right;
-    color:white;
+    color:#ff6a00;
+    font-size:16px;
+}
+.user_right a{
+    margin-left:10px;
+     font-size:14px;
 }
 .content_left{
     width:200px;
@@ -30,23 +35,11 @@ ul li{
 }
 
 
-.ftitle{
-    padding-bottom:5px;
-    border-bottom:1px solid #cbbcbc;
-    font-size:14px;
-    color:#666666;
-}
+
 .fitem{
-    margin-left:15px;
     margin-top:10px;
 }
-.fitem label{
-    margin-right:10px;
-    text-align:left;
-}
-.fitem input{
-    min-width:200px;
-}
+
 .fitem .error{
     color:red;
     display:none;

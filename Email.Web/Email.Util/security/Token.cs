@@ -14,6 +14,8 @@ namespace Email.Util.security
         private readonly static int KEY = 147;
         public string UserId { get; set; }
         public string Account { get; set; }
+
+        public int RoleId { get; set; }
         public string Password { get; set; }
         public DateTime ExpireTime { get; set; }
 
@@ -31,18 +33,19 @@ namespace Email.Util.security
         {
 
         }
-        public Token(string userId, string account, string password, DateTime expireTime)
+        public Token(string userId, string account, string password,int roleId, DateTime expireTime)
         {
             UserId = userId;
             Account = account;
             Password = password;
+            RoleId = roleId;
             ExpireTime = expireTime;
         }
 
 
         public override string ToString()
         {
-            string format = string.Format("{0}|{1}|{2}|{3}", UserId, Account, Password,ExpireTime.ToString("yyyy-MM-dd HH:mm:ss"));
+            string format = string.Format("{0}|{1}|{2}|{3}|{4}", UserId, Account, Password,RoleId,ExpireTime.ToString("yyyy-MM-dd HH:mm:ss"));
            
             byte[] bytes = Encoding.UTF8.GetBytes(HttpUtility.UrlEncode(format));
             for (int i = 0; i < bytes.Length; i++)
@@ -65,14 +68,15 @@ namespace Email.Util.security
                 string format=Encoding.UTF8.GetString(bytes);
                 this.Sign = format.ToMD5();
                 string[] strs= HttpUtility.UrlDecode(format).Split('|');
-                if (strs.Length != 4)
+                if (strs.Length != 5)
                 {
                     throw new Exception("token格式不正确");
                 }
                 UserId = strs[0];
                 Account = strs[1];
                 Password = strs[2];
-                ExpireTime =Convert.ToDateTime(strs[3]);
+                RoleId = Convert.ToInt16(strs[3]);
+                ExpireTime =Convert.ToDateTime(strs[4]);
             }
             catch(Exception ex)
             {

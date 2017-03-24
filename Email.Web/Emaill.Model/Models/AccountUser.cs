@@ -18,6 +18,7 @@ namespace Emaill.Model.Models
         [MaxLength(32)]
         [Required]
         public string Id { get; set; }
+        public int? RoleId { get; set; }
         [Required]
         [MaxLength(50)]
         public string Account { get; set; }
@@ -30,6 +31,9 @@ namespace Emaill.Model.Models
         public DateTime LoginTime { get; set; }
         [Required]
         public DateTime CreateTime { get; set; }
+
+        [ForeignKey("RoleId")]
+        public virtual Role Role { get; set; }
 
         public virtual ICollection<Album> Album { get; set; }
         public virtual ICollection<NoteWord> NoteWord { get; set; }

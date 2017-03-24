@@ -39,7 +39,8 @@ namespace Email.Web.Controllers
             {
                 var user = _service.CheckUser(model.UserName, model.Password);
                 _service.UpdateLoginTime(user);
-                AuthService.Login(user.Id, user.Account, user.Password);
+                int roleid = user.RoleId.HasValue ? user.RoleId.Value : 0;
+                AuthService.Login(user.Id, user.Account, user.Password,roleid);
                 return JsonOK("");
             }
             catch (Exception ex)
@@ -80,6 +81,16 @@ namespace Email.Web.Controllers
 
 
 
+        }
+        public ActionResult GetUserInfo()
+        {
+            ViewBag.UserName = UserName;
+            return PartialView();
+        }
+        public ActionResult Logout()
+        {
+            AuthService.Logout();
+            return View("Login");
         }
     }
 }

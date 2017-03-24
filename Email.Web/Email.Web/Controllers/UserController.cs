@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace Email.Web.Controllers
 {
+    [Authorize(Roles = "1")]
     public class UserController : BaseController
     {
         IAdminService _service;
@@ -31,7 +32,11 @@ namespace Email.Web.Controllers
         public ActionResult GetList()
         {
             var list=_service.GetUserList();
-            var models=new MapHelper<AccountUser, UserModel>().AutoMapList(list);
+            List<UserModel> models = new List<UserModel>();
+            foreach(var item in list)
+            {
+                models.Add(UserMap.AutoMap(item));
+            }
             return JsonList(models,models.Count);
         }
         [HttpPost]
@@ -49,6 +54,7 @@ namespace Email.Web.Controllers
                 user.Password = model.Password;
                 user.UserName = model.UserName;
                 user.Account = model.Account;
+                user.RoleId = model.RoleId;
                 _service.UpdateUser(user);
             }
             return JsonOK("ok");

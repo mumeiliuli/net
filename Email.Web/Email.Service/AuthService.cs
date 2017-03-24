@@ -11,7 +11,7 @@ namespace Email.Service
 {
     public class AuthService
     {
-        public static string Login(string userid,string account,string password,bool isRemember=false)
+        public static string Login(string userid,string account,string password,int roleId,bool isRemember=false)
         {
             DateTime dt = DateTime.Now;
             DateTime expired = dt.AddDays(1);
@@ -19,14 +19,20 @@ namespace Email.Service
             {
                 expired = dt.AddDays(7);
             }
-            Token token = new Token(userid, account, password,expired);
+            Token token = new Token(userid, account, password, roleId, expired);
             HttpCookie cookie = new HttpCookie(Token.CookieName, token.ToString());
             cookie.Expires = expired;
             cookie.Domain = Token.DomainName;
             HttpContext.Current.Response.Cookies.Add(cookie);
             return cookie.Value;
         }
-        public static Token GetUser(string cookie)
+        public static void Logout()
+        {
+            HttpCookie cookie = HttpContext.Current.Request.Cookies[Token.CookieName];
+            cookie.Expires = DateTime.Now.AddDays(-7);
+            HttpContext.Current.Response.Cookies.Add(cookie);
+        }
+        public static AccountUser GetUser(string cookie)
         {
             Token token = new Token();
             token.Decode(cookie);
@@ -35,11 +41,11 @@ namespace Email.Service
             var user = service.GetUserByID(token.UserId);
             if (user != null && token.CheckSign(user.Id, user.Account, user.Password))
             {
-                return token;
+                return user;
             }
             throw new Exception("已过期");
         }
-        public static Token User
+        public static AccountUser User
         {
             get
             {

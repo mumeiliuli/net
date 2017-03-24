@@ -16,6 +16,10 @@ namespace Emaill.Model.ViewModels
 
         public string Password { get; set; }
 
+        public string RoleName { get; set; }
+
+        public int RoleId { get; set; }
+
         public string LoginTime { get; set; }
     }
 }

@@ -6,6 +6,14 @@
         <img src="~/Content/images/logo.png"/>
     </a>
     <div class="user_right">
-        admin
+        @if (User.Identity.IsAuthenticated)
+        {
+            <span>@User.Identity.Name</span>
+            <a href="/Account/Logout">退出</a>
+        }else
+        {
+            <span>游客</span>
+        }
+
     </div>
 </div>
