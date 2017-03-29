@@ -234,6 +234,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\imageno.png" />
+    <Content Include="Content\images\modem.png" />
     <Content Include="Content\lib\bootstrap\bootstrap.css" />
     <Content Include="Content\images\big\login_bg.jpg" />
     <Content Include="Content\images\logo.png" />
@@ -241,6 +242,28 @@
     <Content Include="Content\lib\toastr.css" />
     <Content Include="Content\main\chat.css" />
     <Content Include="Content\main\life.css" />
+    <Content Include="Images\album\170208113636.png" />
+    <Content Include="Images\album\170208113735.png" />
+    <Content Include="Images\album\170208114527.png" />
+    <Content Include="Images\album\170208114557.png" />
+    <Content Include="Images\album\170208115121.png" />
+    <Content Include="Images\album\170208115223.png" />
+    <Content Include="Images\album\170208115336.png" />
+    <Content Include="Images\album\170208115359.png" />
+    <Content Include="Images\album\170208115544.png" />
+    <Content Include="Images\album\170209112229.png" />
+    <Content Include="Images\album\170209112446.png" />
+    <Content Include="Images\album\170209112712.png" />
+    <Content Include="Images\album\170209160509.png" />
+    <Content Include="Images\album\170209161952.png" />
+    <Content Include="Images\album\170209172757.png" />
+    <Content Include="Images\album\170209173849.png" />
+    <Content Include="Images\album\170209174014.png" />
+    <Content Include="Images\album\170209174250.png" />
+    <Content Include="Images\album\170210101007.png" />
+    <Content Include="Images\album\170210101827.png" />
+    <Content Include="Images\album\170210103100.png" />
+    <Content Include="Images\note\image\20170222\20170222141702_0098.jpg" />
     <Content Include="Scripts\jquery-ui\AUTHORS.txt" />
     <Content Include="Scripts\jquery-ui\external\jquery\jquery.js" />
     <Content Include="Scripts\jquery-ui\images\ui-icons_444444_256x240.png" />
@@ -1038,6 +1061,7 @@
     <Content Include="Views\EasyUi\Pagination.cshtml" />
     <Content Include="Views\EasyUi\Slide.cshtml" />
     <Content Include="Views\Test\CacheTest.cshtml" />
+    <Content Include="Views\EasyUi\Tabs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Email.International\Email.International.csproj">

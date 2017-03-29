@@ -16,6 +16,7 @@ namespace Email.Web.Controllers
     [Authorize]
     public class HomeController : BaseController
     {
+        public int NUM = 100;
         protected override void Initialize(RequestContext requestContext)
         {
             base.Initialize(requestContext);
@@ -36,6 +37,8 @@ namespace Email.Web.Controllers
         
         public ActionResult Index()
         {
+            NUM += 1;
+            ViewBag.Num = NUM;
             return View();
         }
 
