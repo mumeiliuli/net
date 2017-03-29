@@ -1,0 +1,153 @@
+﻿
+@{
+    ViewBag.Title = "Box";
+}
+
+<style>
+    .textbox-label, p {
+        margin-top: 10px;
+    }
+
+    tr td, .easyui-panel {
+        padding: 20px;
+        vertical-align: top;
+    }
+</style>
+<table>
+    <tr>
+        <td>
+            <div class="easyui-panel" style="width:400px;" title="TagBox">
+                <input class="easyui-tagbox" value="Apple,Orange" label="basic tag" style="width:100%;" />
+                <input class="easyui-tagbox" value="Apple,Orange" label="button tag" style="width:100%;" data-options="buttonText: 'Button' ,
+                  onClickButton: function(){
+                   alert('click button');
+                  },
+                 tagStyler: StyleTag
+                " />
+                <input class="easyui-tagbox" value="Apple,Orange" label="format tag" style="width:100%" data-options="tagFormatter: function(value, row){
+					return '[' + value + ']';
+			     }
+                ">
+                <input class="easyui-tagbox" value="Apple,Orange" label="valid tag" style="width:100%" data-options="validType: ['length[3,10]','uniquetag']
+                ">
+                <input class="easyui-tagbox" label="list tag" style="width:100%" data-options="url: '/EasyUi/ComboData' ,
+                  method: 'get' ,
+                  value: '3' ,
+                  valueField: 'id' ,
+                  textField: 'text' ,
+                  limitToList: true,
+                  hasDownArrow: true,
+                  prompt: 'Select a Language'
+                ">
+            </div>
+        </td>
+        <td>
+            <div class="easyui-panel" style="width:400px;" title="Tooltip">
+                <p><a href="#" title="This is the tooltip message." class="easyui-tooltip" data-options="position:'right'">Hover me</a> to display tooltip.</p>
+                <p>
+                    <a href="#" class="easyui-tooltip" data-options="content: $('<div></div>'),
+			            onShow: function(){
+				           $(this).tooltip('arrow').css('left', 20);
+				           $(this).tooltip('tip').css('left', $(this).offset().left);
+			             },
+			           onUpdate: function(cc){
+				          cc.panel({
+					      width: 200,
+					      height: 'auto',
+					      border: false,
+					      href: '/EasyUi/Content'
+				         });
+			          }
+		           ">Hove me</a> to display tooltip content via AJAX.
+                </p>
+                <p id="pp2">自定义样式</p>
+                <p>
+                    <a  href="javascript:void(0)" class="easyui-tooltip" data-options="hideEvent: 'none' ,
+                       content: function(){
+                         return $('#toolbar');
+                       },
+                       onShow: function(){
+                        var t=$(this);
+                        t.tooltip('tip').focus().unbind().bind('blur',function(){
+                        t.tooltip('hide');
+                       });
+                       }
+                       ">按钮</a> to display toolbar.
+                </p>
+                <p><a id="dd" href="javascript:void(0)">Click here</a> to see the tooltip dialog.</p>
+
+        </td>
+    </tr>
+</table>
+<div style="display:none">
+    <div id="toolbar">
+        <a href="#" class="easyui-linkbutton easyui-tooltip" title="Add" data-options="iconCls:'icon-add',plain:true"></a>
+        <a href="#" class="easyui-linkbutton easyui-tooltip" title="Cut" data-options="iconCls:'icon-cut',plain:true"></a>
+        <a href="#" class="easyui-linkbutton easyui-tooltip" title="Remove" data-options="iconCls:'icon-remove',plain:true"></a>
+        <a href="#" class="easyui-linkbutton easyui-tooltip" title="Undo" data-options="iconCls:'icon-undo',plain:true"></a>
+        <a href="#" class="easyui-linkbutton easyui-tooltip" title="Redo" data-options="iconCls:'icon-redo',plain:true"></a>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        function StyleTag(value) {
+            if (value == 'Apple') {
+                return 'background:#ffd7d7;color:#c65353';
+            } else {
+                return 'background:#b8eecf;color:#45872c';
+            }
+        }
+        $.extend($.fn.validatebox.defaults.rules, {
+            uniquetag: {
+                validator: function (value, param) {
+                    var tb = $(this).closest('.tagbox').prev();
+                    var values = tb.tagbox('getValues');
+                    return $.inArray(value, values) == -1;
+                },
+                message: 'The tag value already exists.'
+            }
+        })
+
+        $(function () {
+
+            $('#pp2').tooltip({
+                position: 'bottom',
+                content: '<div style="padding:5px;background:#eee;color:#000">This is the tooltip message.</div>',
+                onShow: function () {
+                    $(this).tooltip('tip').css({
+                        backgroundColor: '#fff000',
+                        borderColor: '#ff0000',
+                        boxShadow: '1px 1px 3px #292929'
+                    });
+                },
+                onPosition: function () {
+                    $(this).tooltip('tip').css('left', $(this).offset().left);
+                    $(this).tooltip('arrow').css('left', 20);
+                }
+            });
+            $('#dd').tooltip({
+                position: 'left',
+                content: $('<div></div>'),
+                showEvent: 'click',
+                onUpdate: function (content) {
+                    content.panel({
+                        width: 200,
+                        border: false,
+                        title: 'Login',
+                        href: '/EasyUi/Content'
+                    });
+                },
+                onShow: function () {
+                    var t = $(this);
+                    t.tooltip('tip').unbind().bind('mouseenter', function () {
+                        t.tooltip('show');
+                    }).bind('mouseleave', function () {
+                        t.tooltip('hide');
+                    });
+                }
+            });
+        });
+    </script>
+}
+

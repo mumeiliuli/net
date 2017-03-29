@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewBag.Title = "Tabs";
+}
+@* 
+    height:auto   tabs的高度根据内容调整
+*@
+<style>
+    .tt-inner {
+        display: inline-block;
+        line-height: 12px;
+        padding-top: 5px;
+    }
+
+        .tt-inner img {
+            border: 0;
+        }
+</style>
+<div style="margin:20px 0;">
+    <input id="plain" type="checkbox" onclick="setTabs()"><span>plain</span><br>
+    <input id="narrow" type="checkbox" onclick="setTabs()"><span>narrow</span><br>
+    <input id="pill" type="checkbox" onclick="setTabs()"><span>pill</span><br>
+    <input id="justified" type="checkbox" onclick="setTabs()"><span>justified</span>
+</div>
+<div class="easyui-tabs" style="width:700px;height:400px" id="tt" data-options="tabWidth:120,tabHeight:60">
+    <div title="<span class='tt-inner'><img src='/Content/images/modem.png'/><br>Modem</span>" style="padding:10px" >
+        <p>A modem (modulator-demodulator) is a device that modulates an analog carrier signal to encode digital information, and also demodulates such a carrier signal to decode the transmitted information.</p>
+    </div>
+    <div title="About" style="padding:10px" data-options="tabWidth:160">
+        <p style="font-size:14px">jQuery EasyUI framework helps you build your web pages easily.</p>
+        <ul>
+            <li>easyui is a collection of user-interface plugin based on jQuery.</li>
+            <li>easyui provides essential functionality for building modem, interactive, javascript applications.</li>
+            <li>using easyui you don't need to write many javascript code, you usually defines user-interface by writing some HTML markup.</li>
+            <li>complete framework for HTML5 web page.</li>
+            <li>easyui save your time and scales while developing your products.</li>
+            <li>easyui is very easy but powerful.</li>
+        </ul>
+    </div>
+    <div title="Help" data-options="iconCls:'icon-help',closable:true" style="padding:10px">
+       
+    </div>
+    <div title="下拉菜单" style="padding:10px">
+        自定义
+    </div>
+    <div title="Sub Tabs" style="padding:10px;">
+        <div class="easyui-tabs" data-options="fit:true,plain:true">
+            <div title="Title1" style="padding:10px;">Content 1</div>
+            <div title="Title2" style="padding:10px;">Content 2</div>
+            <div title="Title3" style="padding:10px;">Content 3</div>
+        </div>
+    </div>
+</div>
+<div id="mm">
+    <div>Welcome</div>
+    <div>Help Contents</div>
+    <div data-options="iconCls:'icon-search'">Search</div>
+    <div>Dynamic Help</div>
+</div>
+<div id="tabs" class="easyui-tabs" data-options="tools:'#tab-tools'" style="width:700px;height:250px;margin-top:20px;">
+</div>
+<div id="tab-tools">
+    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-add'" onclick="addPanel()"></a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-remove'" onclick="removePanel()"></a>
+</div>
+
+@section scripts{
+
+    <script>
+        var index = 0;
+        function addPanel() {
+            index++;
+            $('#tabs').tabs('add', {
+                title: 'Tab' + index,
+                content: '<div style="padding:10px">Content' + index + '</div>',
+                closable: true
+            });
+        }
+        function removePanel() {
+            var tab = $('#tabs').tabs('getSelected');
+            if (tab) {
+                var index = $('#tabs').tabs('getTabIndex', tab);
+                $('#tabs').tabs('close', index);
+            }
+        }
+        function setTabs() {
+            $('#tt').tabs({
+                plain: $('#plain').is(':checked'),
+                narrow: $('#narrow').is(':checked'),
+                pill: $('#pill').is(':checked'),
+                justified: $('#justified').is(':checked')
+            })
+        }
+        $(function () {
+            var p = $('#tt').tabs({ tabPosition :'top'}).tabs('tabs')[3];
+            var mb = p.panel('options').tab.find('a.tabs-inner');
+            mb.menubutton({
+                menu: '#mm',
+            }).click(function () {
+                $('#tt').tabs('select', 2);
+            });
+            
+            //hover切换
+            //var tabs = $('#tt').tabs().tabs('tabs');
+            //for (var i = 0; i < tabs.length; i++) {
+            //    tabs[i].panel('options').tab.unbind().bind('mouseenter', { index: i }, function (e) {
+            //        $('#tt').tabs('select', e.data.index);
+            //    });
+            //}
+        });
+    </script>
+}
+
