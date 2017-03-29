@@ -5,9 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - 秘密花园</title>
-    @Html.RenderCss("Content/lib/easyui/default/easyui.css", "Content/lib/easyui/color.css", "Content/lib/easyui/icon.css", "Content/lib/bootstrap/bootstrap.css")
+    <link href="~/Content/lib/easyui/default/easyui.css" rel="stylesheet" />
+    @Html.RenderCss("Content/lib/easyui/color.css", "Content/lib/easyui/icon.css")
     @Html.RenderCss("Content/main/base.css")
-    @Html.RenderJs("Scripts/lib/jquery/jquery.js", "Scripts/lib/jquery/jquery.easyui.min.js", "Scripts/lib/bootstrap.js", "Scripts/lib/jquery/jquery.tmpl.js")
+    
 </head>
 <body class="easyui-layout">
     <div data-options="region:'north',border:false" style="height:60px;">
@@ -41,6 +42,7 @@
                     <li><a href="/EasyUi/Pagination">分页</a></li>
                     <li><a href="/EasyUi/Slide">滑动条</a></li>
                     <li><a href="/EasyUi/Tabs">标签页</a></li>
+                    <li><a href="/EasyUi/Box">标签框、提示框</a></li>
                 </ul>
             </div>
 
@@ -49,7 +51,9 @@
     <div class="content_right" data-options="region:'center'">
         @RenderBody()
     </div>
-
+    <script src="~/Scripts/lib/jquery/jquery.js"></script>
+    <script src="~/Scripts/lib/jquery/jquery.easyui.min.js"></script>
+    <script src="~/Scripts/lib/jquery/jquery.tmpl.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

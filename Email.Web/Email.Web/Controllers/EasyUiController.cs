@@ -91,6 +91,10 @@ namespace Email.Web.Controllers
         {
             return View();
         }
+        public ActionResult Box()
+        {
+            return View();
+        }
 
     }
 }

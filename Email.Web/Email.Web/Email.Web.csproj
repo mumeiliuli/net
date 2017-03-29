@@ -1003,6 +1003,7 @@
     <Content Include="Scripts\lib\require.js" />
     <Content Include="Scripts\lib\toastr\toastr.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\EasyUi\_content.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1062,6 +1063,7 @@
     <Content Include="Views\EasyUi\Slide.cshtml" />
     <Content Include="Views\Test\CacheTest.cshtml" />
     <Content Include="Views\EasyUi\Tabs.cshtml" />
+    <Content Include="Views\EasyUi\Box.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Email.International\Email.International.csproj">
