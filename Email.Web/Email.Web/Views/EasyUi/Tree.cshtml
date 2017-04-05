@@ -1,0 +1,167 @@
+﻿
+@{
+    ViewBag.Title = "Tree";
+}
+<style>
+    tr td{
+        vertical-align:top;
+        padding:20px;
+    }
+</style>
+
+<table>
+    <tr>
+        <td>
+            <div style="margin:20px 0;">
+                <a href="#" class="easyui-linkbutton" onclick="collapseAll()">CollapseAll</a>
+                <a href="#" class="easyui-linkbutton" onclick="expandAll()">ExpandAll</a>
+                <a href="#" class="easyui-linkbutton" onclick="expandTo()">ExpandTo</a>
+                <a href="#" class="easyui-linkbutton" onclick="getSelected()">GetSelected</a>
+            </div>
+            <div class="easyui-panel" style="padding:5px;">
+                <ul class="easyui-tree" id="tt1">
+                    <li>
+                        <span>My Documents</span>
+                        <ul>
+                            <li data-options="state:'closed'">
+                                <span>Photos</span>
+                                <ul>
+                                    <li>
+                                        <span>Friend</span>
+                                    </li>
+                                    <li>
+                                        <span>Wife</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span>Program Files</span>
+                                <ul>
+                                    <li>Intel</li>
+                                    <li>Java</li>
+                                </ul>
+                            </li>
+                            <li>index.html</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </td>
+        <td>
+            <div style="margin:10px 0">
+                <input type="checkbox" checked onchange="$('#tt').tree({cascadeCheck:$(this).is(':checked')})">级联效应
+                <input type="checkbox" onchange="$('#tt').tree({onlyLeafCheck:$(this).is(':checked')})">只有叶子有选择框
+            </div>
+            <div class="easyui-panel" style="padding:5px">
+                <ul id="tt" class="easyui-tree" data-options="url:'/EasyUi/TreeData',method:'get',animate:true,checkbox:true"></ul>
+            </div>
+        </td>
+        <td>
+            
+            <div class="easyui-panel" style="padding:5px;width:300px;" title="右键点击node">
+                <ul id="tt2" class="easyui-tree" data-options=
+                    "url: '/EasyUi/TreeData' ,
+                    method: 'get' ,
+                    animate: true,
+                    checkbox:function(node){
+					  if (node.id == 11 || node.id == 112){
+						return true;
+					  }
+				    },
+                    dnd:true,
+                    onContextMenu: function(e,node){
+                       e.preventDefault();
+                       $(this).tree('select',node.target);
+                       $('#mm').menu('show',{
+                       left: e.pageX,
+                       top: e.pageY
+                    });
+                    }
+                    "></ul>
+            </div>
+        </td>
+        <td>
+
+            <div class="easyui-panel" style="padding:5px;width:300px;" title="拖曳node 点击编辑">
+                <ul id="tt2" class="easyui-tree" data-options=
+                    "url: '/EasyUi/TreeData',
+                     method: 'get' ,
+                    animate: true,
+                    dnd:true,
+                    onClick: function(node){
+					  $(this).tree('beginEdit',node.target);
+				    },
+                    lines:true,
+                    formatter:formatter
+                   "
+                    ></ul>
+            </div>
+        </td>
+    </tr>
+</table>
+<div id="mm" class="easyui-menu" style="width:120px;">
+    <div onclick="append()" data-options="iconCls:'icon-add'">Append</div>
+    <div onclick="removeit()" data-options="iconCls:'icon-remove'">Remove</div>
+    <div class="menu-sep"></div>
+    <div onclick="expand()">Expand</div>
+    <div onclick="collapse()">Collapse</div>
+</div>
+@section Scripts{
+    <script>
+        function collapseAll() {
+            $('#tt1').tree('collapseAll');
+        }
+        function expandAll() {
+            $('#tt1').tree('expandAll');
+        }
+        function expandTo() {
+            var node = $('#tt1').tree('find', 112);
+            $('#tt1').tree('expandTo', node.target).tree('select', node.target);
+        }
+        function getSelected() {
+            var node = $('#tt1').tree('getSelected');
+            if (node) {
+                var s = node.text;
+                if (node.attributes) {
+                    s += "," + node.attributes.p1 + "," + node.attributes.p2;
+                }
+                alert(s);
+            }
+        }
+
+        function append() {
+            var t = $('#tt2');
+            var node = t.tree('getSelected');
+            t.tree('append', {
+                parent: (node ? node.target : null),
+                data: [{
+                    text: 'new item1'
+                }, {
+                    text: 'new item2'
+                }]
+            });
+        }
+        function removeit() {
+            var node = $('#tt2').tree('getSelected');
+            $('#tt2').tree('remove', node.target);
+        }
+        function collapse() {
+            var node = $('#tt2').tree('getSelected');
+            $('#tt2').tree('collapse', node.target);
+        }
+        function expand() {
+            var node = $('#tt2').tree('getSelected');
+            $('#tt2').tree('expand', node.target);
+        }
+
+        function formatter(node) {
+            var s = node.text;
+            if (node.children) {
+                s += '&nbsp;<span style="color:blue">(' + node.children.length + ')</span>';
+            }
+            return s;
+        }
+    </script>
+    
+     }
+
