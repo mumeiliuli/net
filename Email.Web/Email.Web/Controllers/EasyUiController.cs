@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Email.Web.Models;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -94,6 +96,28 @@ namespace Email.Web.Controllers
         public ActionResult Box()
         {
             return View();
+        }
+        public ActionResult Tree()
+        {
+            return View();
+        }
+        public ActionResult TreeData()
+        {
+            List<TreeModel> treedatas = new List<TreeModel>();
+            TreeModel model = new TreeModel
+            {
+                id = 1,
+                text = "My Documents",
+                children = new List<TreeModel>
+                {
+                    new TreeModel {id=11,text="Photo",children=new List<TreeModel> { new TreeModel {id=111,text="Friend" }, new TreeModel { id = 112, text = "Family" } } },
+                    new TreeModel {id=12,text="Program Files" },
+                    new TreeModel {id=13,text="add" ,iconCls="icon-add"}
+                },
+            };
+            
+            treedatas.Add(model);
+            return Json(treedatas, JsonRequestBehavior.AllowGet);
         }
 
     }
