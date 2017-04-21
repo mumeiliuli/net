@@ -108,16 +108,21 @@ namespace Email.Web.Controllers
             {
                 id = 1,
                 text = "My Documents",
+                date="2017-01-01",
                 children = new List<TreeModel>
                 {
                     new TreeModel {id=11,text="Photo",children=new List<TreeModel> { new TreeModel {id=111,text="Friend" }, new TreeModel { id = 112, text = "Family" } } },
                     new TreeModel {id=12,text="Program Files" },
-                    new TreeModel {id=13,text="add" ,iconCls="icon-add"}
+                    new TreeModel {id=13,text="add" ,iconCls="icon-add",date="2017-02-02"}
                 },
             };
             
             treedatas.Add(model);
             return Json(treedatas, JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult TreeGrid()
+        {
+            return View();
         }
 
     }

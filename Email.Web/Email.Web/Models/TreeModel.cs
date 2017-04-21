@@ -10,7 +10,7 @@ namespace Email.Web.Models
         public int id { get; set; }
         public string text { get; set; }
         public string state { get; set; }
-
+        public string date { get; set; }
         public string iconCls { get; set; }
         public List<TreeModel> children { get; set; }
     }

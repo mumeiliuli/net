@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Email.ConsoleTest.castle
+namespace Email.ConsoleTest.castle.assembly
 {
-    public class CastleFun
-    {
-    }
+    
 }

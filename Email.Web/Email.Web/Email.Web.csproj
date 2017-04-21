@@ -101,20 +101,24 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    <Reference Include="Microsoft.Owin.Security, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -214,6 +218,7 @@
     <Compile Include="Controllers\ChatController.cs" />
     <Compile Include="Controllers\EasyUiController.cs" />
     <Compile Include="Controllers\LifeStyleController.cs" />
+    <Compile Include="Controllers\LoginApiController.cs" />
     <Compile Include="Controllers\MoneyController.cs" />
     <Compile Include="Controllers\NoteController.cs" />
     <Compile Include="Controllers\PicController.cs" />
@@ -234,6 +239,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\custom\css\index.css" />
+    <Content Include="app\custom\js\bill.js" />
+    <Content Include="app\custom\js\index.js" />
+    <Content Include="app\index.html" />
+    <Content Include="app\lib\angular\angular-route.js" />
+    <Content Include="app\lib\angular\angular.js" />
+    <Content Include="app\lib\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="app\lib\bootstrap\css\bootstrap.css" />
+    <Content Include="app\lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="app\lib\bootstrap\js\bootstrap.js" />
+    <Content Include="app\lib\jquery.js" />
+    <Content Include="app\test.html" />
+    <Content Include="app\views\bill.html" />
+    <Content Include="app\views\girl.html" />
     <Content Include="Content\images\imageno.png" />
     <Content Include="Content\images\modem.png" />
     <Content Include="Content\lib\bootstrap\bootstrap.css" />
@@ -1039,6 +1058,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
+    <Content Include="app\lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="app\lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="app\lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="app\lib\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-ui\package.json" />
     <Content Include="Scripts\lib\colorpicker\images\Thumbs.db" />
@@ -1066,6 +1089,8 @@
     <Content Include="Views\EasyUi\Tabs.cshtml" />
     <Content Include="Views\EasyUi\Box.cshtml" />
     <Content Include="Views\EasyUi\Tree.cshtml" />
+    <Content Include="Views\EasyUi\TreeGrid.cshtml" />
+    <Content Include="Views\LoginApi\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Email.International\Email.International.csproj">

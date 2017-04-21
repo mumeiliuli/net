@@ -56,9 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="castle\CastleFun.cs" />
+    <Compile Include="castle\Aniaml.cs" />
+    <Compile Include="castle\assembly\Cat.cs" />
     <Compile Include="castle\CastleTest.cs" />
     <Compile Include="castle\ModuleTest.cs" />
+    <Compile Include="castle\AnimalInstaller.cs" />
     <Compile Include="castle\SimpleInterceptor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
