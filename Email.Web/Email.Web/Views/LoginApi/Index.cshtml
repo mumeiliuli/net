@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Bearer登录授权";
+}
+
+<button id="login">登录</button><br/>
+<button id="get">获取</button><br />
+
+@section Scripts{
+    <script>
+        var token = "";
+        $("#login").click(function () {
+            $.ajax({
+                url: "/LoginApi/Login",
+                method: "POST",
+                dataType: "json",
+                success: function (r) {
+                    console.log(r);
+                    token = r;
+                }
+            })
+        });
+        $("#get").click(function () {
+            $.ajax({
+                url: "/LoginApi/Get",
+                headers: {
+                    "Authorization": "Bearer "+token
+                },
+                method: "POST",
+                dataType: "json",
+                success: function (r) {
+                    console.log(r);
+                }
+            })
+        });
+
+    </script>
+}
+

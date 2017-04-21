@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "TreeGrid";
+}
+
+<table title="Folder Browser" class="easyui-treegrid" style="width:700px;height:250px" data-options=
+       "url: '/EasyUi/TreeData' ,
+        method: 'get' ,
+        rownumbers: true,
+        idField: 'id' ,
+        treeField: 'text'
+       ">
+    <thead>
+        <tr>
+            <th data-options="field:'text'" width="220">Name</th>
+            <th data-options="field:'date'" width="150">Modified Date</th>
+        </tr>
+    </thead>
+</table>
+
