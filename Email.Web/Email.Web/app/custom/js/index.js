@@ -1,4 +1,4 @@
-﻿var app = angular.module("emailApp", ["ngRoute"]);
+﻿var app = angular.module("emailApp", ["ngRoute","ui.tree"]);
 app.run(function ($rootScope, $location) {
     $rootScope.$on("$locationChangeStart",function(evt,next,current){
         console.log("路由变化前");
@@ -7,9 +7,7 @@ app.run(function ($rootScope, $location) {
         console.log("路由加载后");
     });
     });
-app.controller("BillController", function ($scope, $routeParams) {
-    $scope.id = $routeParams.id
-});
+
 app.config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
     $locationProvider.hashPrefix('');
     $routeProvider

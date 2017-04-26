@@ -1,6 +1,31 @@
 ﻿
-<div ng-controller="BillController">
-    {{id}}
+<div class="row">
+    <div class="panel panel-info col-md-2">
+        <div id="bill_treeview">
+            <div ui-tree id="tree-root">
+                <ol ui-tree-nodes ng-model="list">
+                    <li ng-repeat="node in list" ui-tree-node ng-include="'nodes_renderer.html'"></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-info col-md-2">
+        
+    </div>
 </div>
-
+<script type="text/ng-template" id="nodes_renderer.html">
+    <div ui-tree-handle class="tree-node tree-node-content">
+        <a class="btn btn-success btn-xs" ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)">
+            <span class="glyphicon"ng-class="{ 'glyphicon-chevron-right': collapsed,'glyphicon-chevron-down': !collapsed
+        }"></span>
+        </a>
+        <a ng-click="nodeClick(node)">{{node.title}}</a>
+        
+        
+    </div>
+    <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+        <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
+        </li>
+    </ol>
+</script>
 

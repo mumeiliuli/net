@@ -14,4 +14,12 @@ namespace Email.Web.Models
         public string iconCls { get; set; }
         public List<TreeModel> children { get; set; }
     }
+
+    public class TreeNode
+    {
+        public string id { get; set; }
+        public string title { get; set; }
+
+        public List<TreeNode> nodes { get; set; }
+    }
 }
