@@ -22,9 +22,12 @@ namespace Emaill.Model
         public DbSet<Comment> Comments { get; set; }
         public DbSet<RecordLike> RecordLikes { get; set; }
 
+        public DbSet<UserCommnet> UserCommnets { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<RecordLike>().HasKey(t => new { t.CommentUserId, t.RecordId });
+            modelBuilder.Entity<UserCommnet>().MapToStoredProcedures();
             base.OnModelCreating(modelBuilder);
         }
     }

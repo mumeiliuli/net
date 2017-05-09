@@ -243,6 +243,7 @@
     <Content Include="app\custom\js\bill.js" />
     <Content Include="app\custom\js\index.js" />
     <Content Include="app\index.html" />
+    <Content Include="app\javascript.html" />
     <Content Include="app\lib\angular-ui-tree\angular-ui-tree.css" />
     <Content Include="app\lib\angular-ui-tree\angular-ui-tree.js" />
     <Content Include="app\lib\angular-ui-tree\css\app.css" />
@@ -1093,6 +1094,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="json\" />
+    <Folder Include="php\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\Bootstrap\" />
   </ItemGroup>

@@ -74,6 +74,10 @@
     <Compile Include="Migrations\201703170629496_add_role.Designer.cs">
       <DependentUpon>201703170629496_add_role.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704260717116_add-proc.cs" />
+    <Compile Include="Migrations\201704260717116_add-proc.Designer.cs">
+      <DependentUpon>201704260717116_add-proc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountUser.cs" />
     <Compile Include="Models\Album.cs" />
@@ -84,6 +88,7 @@
     <Compile Include="Models\RecordLike.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Schedule.cs" />
+    <Compile Include="Models\UserCommnet.cs" />
     <Compile Include="Procedures\Record.cs" />
     <Compile Include="Procedures\RecordList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703170629496_add_role.resx">
       <DependentUpon>201703170629496_add_role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704260717116_add-proc.resx">
+      <DependentUpon>201704260717116_add-proc.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
