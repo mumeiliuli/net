@@ -320,7 +320,6 @@ class BaseHtml
     public static function beginForm($action = '', $method = 'post', $options = [])
     {
         $action = Url::to($action);
-
         $hiddenInputs = [];
 
         $request = Yii::$app->getRequest();

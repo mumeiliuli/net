@@ -126,7 +126,7 @@ class SiteController extends Controller
     }
 
     public function actionSay($message="hello"){
-        return $this->render('say',['message'=>$message]);
+         return  $this->render('say',['message'=>$message]);
     }
     public function actionEntry(){
         $model=new EntryForm();

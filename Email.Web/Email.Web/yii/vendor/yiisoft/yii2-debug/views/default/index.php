@@ -67,7 +67,7 @@ if (isset($this->context->module->panels['db']) && isset($this->context->module-
             [
                 'attribute' => 'time',
                 'value' => function ($data) {
-                    return '<span class="nowrap">' . Yii::$app->formatter->asDatetime($data['time'], 'yyyy-MM-dd HH:mm:ss') . '</span>';
+                    return '<span class="nowrap">' . Yii::$app->->asDatetime($data['time'], 'yyyy-MM-dd HH:mm:ss') . '</span>';
                 },
                 'format' => 'html',
             ],

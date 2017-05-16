@@ -210,6 +210,7 @@ class BaseUrl
         }
 
         $url = Yii::getAlias($url);
+       
         if ($url === '') {
             $url = Yii::$app->getRequest()->getUrl();
         }
